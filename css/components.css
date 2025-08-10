@@ -27,8 +27,9 @@
   border-color: var(--primary-blue);
   background: var(--primary-blue-light);
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-lg);
+  z-index: 5;
 }
 
 .choice-button:active {
@@ -147,8 +148,9 @@
 }
 
 .character-portrait:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   border-color: var(--primary-blue);
+  z-index: 10;
 }
 
 .character-portrait img,
@@ -182,10 +184,10 @@
 
 .character-name {
   position: absolute;
-  bottom: -25px;
+  bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--neutral-800);
+  background: rgba(0, 0, 0, 0.8);
   color: white;
   padding: var(--space-1) var(--space-3);
   border-radius: 1rem;
@@ -193,7 +195,9 @@
   font-weight: 500;
   white-space: nowrap;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 20;
 }
 
 .character-portrait:hover .character-name {
@@ -588,8 +592,31 @@
   }
 }
 
-.choice-button:hover {
+/* Remove conflicting hover animation */
+.choice-button:focus {
   animation: pulse 0.6s ease-in-out;
+}
+
+/* Prevent hover disappearing issues */
+.choice-button,
+.character-portrait,
+.feedback-panel,
+.dialogue-box {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Ensure stable positioning on hover */
+.character-area {
+  position: relative;
+  z-index: 1;
+}
+
+.choices-panel,
+.choices-list {
+  position: relative;
+  z-index: 2;
 }
 
 /* Mobile Optimizations */

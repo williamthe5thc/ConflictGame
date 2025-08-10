@@ -1,0 +1,558 @@
+{
+  "id": "scenario-002",
+  "metadata": {
+    "title": "The Resource Competition",
+    "description": "Navigate competing demands for a key team member's time when two urgent projects collide",
+    "category": "workload",
+    "difficulty": "intermediate", 
+    "estimatedTime": "8-12 minutes",
+    "learningObjectives": [
+      "Practice resource allocation negotiation",
+      "Explore interest-based problem solving",
+      "Learn to manage competing priorities",
+      "Understand when to escalate vs. collaborate"
+    ],
+    "conflictTypes": ["resource allocation", "competing priorities", "deadline pressure", "cross-team coordination"],
+    "author": "Conflict Management Training Team",
+    "version": "1.0",
+    "dateCreated": "2025-08-09"
+  },
+  "characters": {
+    "player": {
+      "name": "You",
+      "role": "Project Coordinator", 
+      "description": "A diplomatic project coordinator trying to balance competing team demands"
+    },
+    "maria": {
+      "name": "Maria",
+      "role": "Marketing Manager",
+      "description": "Results-driven marketing manager with an urgent campaign deadline",
+      "portrait": "assets/images/characters/maria.svg"
+    },
+    "david": {
+      "name": "David", 
+      "role": "Product Manager",
+      "description": "Strategic product manager focused on long-term feature development",
+      "portrait": "assets/images/characters/david.svg"
+    },
+    "sam": {
+      "name": "Sam",
+      "role": "Senior Designer",
+      "description": "Talented designer caught between competing project demands",
+      "portrait": "assets/images/characters/sam.svg"
+    }
+  },
+  "settings": {
+    "location": "Open office workspace with multiple team areas",
+    "time": "Wednesday morning, both projects have Friday deadlines",
+    "background": "assets/images/backgrounds/office-workspace.svg",
+    "ambientSound": "assets/audio/ambient/busy-office.mp3"
+  },
+  "nodes": {
+    "start": {
+      "type": "scene",
+      "content": {
+        "title": "The Double Booking Crisis",
+        "text": "You arrive at work to find Maria and David in a heated discussion near Sam's desk. Maria insists: 'Sam promised to finish the campaign visuals by Friday - our product launch depends on it!' David counters: 'The new feature mockups are strategic priority, and Sam agreed to those first.' Sam looks overwhelmed and stressed, caught between two important projects. Both deadlines are Friday.",
+        "speaker": "narrator",
+        "emotion": "tense"
+      },
+      "choices": [
+        {
+          "id": "gather_information",
+          "text": "Ask everyone to step back and gather the full facts about both projects",
+          "strategy": "active_listening",
+          "nextNode": "information_gathering"
+        },
+        {
+          "id": "split_time",
+          "text": "Suggest splitting Sam's time 50/50 between both projects",
+          "strategy": "compromising",
+          "nextNode": "time_split_proposal"
+        },
+        {
+          "id": "check_priorities",
+          "text": "Suggest checking with upper management about which project has higher priority",
+          "strategy": "avoiding",
+          "nextNode": "escalation_approach"
+        },
+        {
+          "id": "find_alternatives",
+          "text": "Explore alternative solutions - additional resources or adjusted timelines",
+          "strategy": "collaborating",
+          "nextNode": "creative_alternatives"
+        }
+      ]
+    },
+    "information_gathering": {
+      "type": "outcome",
+      "content": {
+        "title": "Understanding the Real Situation",
+        "text": "You facilitate a fact-finding session. Maria reveals: 'The campaign was planned 6 weeks ago, but we just learned our competitor is launching Monday.' David explains: 'The feature was supposed to be done by external contractors, but they backed out last week.' Sam adds: 'I thought I could handle both, but the scope of each project has grown significantly.' Now you understand the real constraints.",
+        "speaker": "narrator",
+        "emotion": "clarifying"
+      },
+      "feedback": {
+        "strategy": "active_listening",
+        "effectiveness": "very_high",
+        "explanation": "Information gathering reveals that both requests are legitimate and urgent, but based on changed circumstances. This foundation is essential for finding workable solutions.",
+        "skillsUsed": ["fact-finding", "stakeholder management", "situation analysis"],
+        "consequences": "All parties feel heard and the real constraints are now clear"
+      },
+      "choices": [
+        {
+          "id": "prioritize_based_on_impact",
+          "text": "Help the team assess which project has greater business impact",
+          "strategy": "collaborating",
+          "nextNode": "impact_assessment"
+        },
+        {
+          "id": "find_external_help",
+          "text": "Propose finding external contractors or freelancers to help",
+          "strategy": "collaborating",
+          "nextNode": "external_resources"
+        },
+        {
+          "id": "negotiate_scope_reduction",
+          "text": "Work with each team to reduce scope so both projects can be completed",
+          "strategy": "compromising",
+          "nextNode": "scope_negotiation"
+        },
+        {
+          "id": "sequential_approach",
+          "text": "Suggest completing one project fully before starting the other",
+          "strategy": "competing",
+          "nextNode": "sequential_delivery"
+        }
+      ]
+    },
+    "impact_assessment": {
+      "type": "outcome",
+      "content": {
+        "title": "Weighing Business Impact",
+        "text": "You facilitate a discussion about business impact. Maria presents data: 'The campaign targets our biggest growth market - delaying could cost $200K in revenue.' David shares his perspective: 'This feature addresses our #1 customer complaint and affects user retention.' Both make compelling cases. Sam asks: 'What if we could deliver a simplified version of each by Friday, then enhance both next week?'",
+        "speaker": "narrator",
+        "emotion": "analytical"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "high",
+        "explanation": "Focusing on business impact helps move beyond personal preferences to objective criteria. Sam's suggestion shows how collaboration can lead to creative solutions.",
+        "skillsUsed": ["objective analysis", "facilitation", "collaborative problem solving"],
+        "consequences": "Discussion shifts from competition to joint problem solving"
+      },
+      "choices": [
+        {
+          "id": "mvp_approach",
+          "text": "Support Sam's idea of delivering simplified versions of both projects",
+          "strategy": "collaborating",
+          "nextNode": "minimum_viable_approach"
+        },
+        {
+          "id": "revenue_priority",
+          "text": "Recommend prioritizing the marketing campaign due to immediate revenue impact",
+          "strategy": "competing",
+          "nextNode": "revenue_focus"
+        },
+        {
+          "id": "customer_priority",
+          "text": "Advocate for the product feature due to long-term customer retention",
+          "strategy": "competing",
+          "nextNode": "retention_focus"
+        }
+      ]
+    },
+    "minimum_viable_approach": {
+      "type": "resolution",
+      "content": {
+        "title": "Creative Collaboration Wins",
+        "text": "The team embraces the simplified approach. Maria agrees to core campaign visuals without elaborate animations. David accepts basic mockups with detailed specs for developers. Sam can deliver both by Friday, with enhancements the following week. Everyone commits to supporting this plan and communicating the phased approach to their stakeholders.",
+        "speaker": "narrator",
+        "emotion": "satisfied"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "very_high",
+        "explanation": "This solution addresses both immediate needs while maintaining relationships and setting up future success. Everyone makes small concessions for a bigger win.",
+        "skillsUsed": ["creative problem solving", "stakeholder alignment", "phased delivery planning"],
+        "consequences": "Both projects proceed successfully, team relationships strengthen, future collaboration improves"
+      },
+      "endings": [
+        {
+          "type": "success",
+          "title": "Win-Win Innovation",
+          "description": "The team discovers that simplified initial deliveries often work better than complex first attempts, leading to a new approach for future projects.",
+          "reflection": "How can resource constraints sometimes lead to better, more focused solutions?"
+        }
+      ]
+    },
+    "time_split_proposal": {
+      "type": "outcome",
+      "content": {
+        "title": "The 50/50 Split Dilemma",
+        "text": "You suggest splitting Sam's time equally between projects. Maria objects: 'Split focus means both projects will be mediocre. The campaign needs Sam's full attention for 3 days.' David agrees: 'Design work requires deep focus - context switching will hurt quality.' Sam nods: 'I work best when I can concentrate on one thing at a time.' The compromise isn't working.",
+        "speaker": "narrator",
+        "emotion": "frustrated"
+      },
+      "feedback": {
+        "strategy": "compromising",
+        "effectiveness": "low",
+        "explanation": "While fair-seeming, time-splitting ignores the nature of creative work that requires deep focus. Quick compromises may not address underlying needs.",
+        "skillsUsed": ["attempt at fairness", "basic negotiation"],
+        "consequences": "All parties remain unsatisfied, quality concerns arise"
+      },
+      "choices": [
+        {
+          "id": "understand_work_style",
+          "text": "Ask Sam what working arrangement would produce the best results",
+          "strategy": "active_listening",
+          "nextNode": "designer_perspective"
+        },
+        {
+          "id": "insist_on_compromise",
+          "text": "Emphasize that compromise is necessary and everyone needs to be flexible",
+          "strategy": "competing",
+          "nextNode": "forced_compromise"
+        },
+        {
+          "id": "explore_alternatives_again",
+          "text": "Acknowledge the split isn't working and look for other solutions",
+          "strategy": "collaborating",
+          "nextNode": "alternative_exploration"
+        }
+      ]
+    },
+    "designer_perspective": {
+      "type": "outcome",
+      "content": {
+        "title": "Understanding Creative Work",
+        "text": "Sam explains: 'Design work needs uninterrupted blocks of time. If I could focus on the marketing campaign Monday-Wednesday, then switch to product mockups Thursday-Friday, I could deliver quality work for both. But I'd need both teams to not interrupt me during their off-days.' This sequential approach addresses the focus issue while serving both projects.",
+        "speaker": "narrator",
+        "emotion": "insightful"
+      },
+      "feedback": {
+        "strategy": "active_listening",
+        "effectiveness": "high",
+        "explanation": "Listening to the person doing the work reveals important constraints about how creative work actually happens. This leads to more practical solutions.",
+        "skillsUsed": ["expert consultation", "workflow understanding", "practical problem solving"],
+        "consequences": "A workable solution emerges that respects how design work actually gets done"
+      },
+      "choices": [
+        {
+          "id": "support_sequential",
+          "text": "Support Sam's sequential approach and help get buy-in from both teams",
+          "strategy": "collaborating",
+          "nextNode": "sequential_success"
+        },
+        {
+          "id": "negotiate_interruptions",
+          "text": "Help establish clear boundaries about interruptions and check-ins",
+          "strategy": "compromising",
+          "nextNode": "boundary_setting"
+        }
+      ]
+    },
+    "creative_alternatives": {
+      "type": "outcome",
+      "content": {
+        "title": "Expanding the Solution Space",
+        "text": "You shift focus to creative alternatives. 'What if we bring in a freelance designer for one project?' Maria responds: 'Our brand is too specific for outsiders.' David suggests: 'Could we delay the feature launch by one week?' Maria counters: 'What about using stock visuals for the campaign and having Sam create custom work later?' New possibilities are emerging.",
+        "speaker": "narrator",
+        "emotion": "creative"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "high",
+        "explanation": "Opening up the solution space beyond just Sam's time reveals multiple paths forward. This approach often uncovers options that weren't initially visible.",
+        "skillsUsed": ["creative thinking", "assumption challenging", "option generation"],
+        "consequences": "Multiple viable solutions emerge, reducing pressure on Sam"
+      },
+      "choices": [
+        {
+          "id": "stock_visual_approach",
+          "text": "Explore Maria's stock visual idea as a temporary solution",
+          "strategy": "compromising",
+          "nextNode": "stock_solution"
+        },
+        {
+          "id": "delayed_launch",
+          "text": "Investigate whether a one-week delay is feasible for the product feature",
+          "strategy": "accommodating",
+          "nextNode": "timeline_flexibility"
+        },
+        {
+          "id": "cross_train_solution",
+          "text": "Explore whether other team members could help with simpler design tasks",
+          "strategy": "collaborating",
+          "nextNode": "team_capability"
+        }
+      ]
+    },
+    "sequential_success": {
+      "type": "resolution",
+      "content": {
+        "title": "Focused Excellence",
+        "text": "Both teams agree to Sam's sequential approach. Maria's team gets Sam's full attention Monday-Wednesday for campaign visuals, with no interruptions. David's team gets Thursday-Friday for product mockups. Both teams commit to providing all requirements upfront and avoiding mid-stream changes. Sam delivers excellent work for both projects, and the teams learn the value of respecting creative workflow.",
+        "speaker": "narrator",
+        "emotion": "accomplished"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "very_high",
+        "explanation": "This solution respects how creative work actually gets done while meeting both teams' needs. Everyone learns about workflow optimization.",
+        "skillsUsed": ["workflow optimization", "boundary setting", "team coordination"],
+        "consequences": "Both projects succeed, teams learn better resource sharing practices, future conflicts reduced"
+      },
+      "endings": [
+        {
+          "type": "success",
+          "title": "Workflow Mastery",
+          "description": "The teams establish new protocols for sharing creative resources that become a model for the entire organization.",
+          "reflection": "How can understanding work styles and workflows lead to better resource allocation decisions?"
+        }
+      ]
+    },
+    "escalation_approach": {
+      "type": "outcome",
+      "content": {
+        "title": "Seeking Higher Authority",
+        "text": "You suggest escalating to management for priority direction. Maria and David exchange worried glances. 'If we escalate this, it makes us all look bad,' Maria says. David adds: 'Management will just say figure it out yourselves.' Sam sighs: 'I really hoped we could solve this without involving the bosses.' The escalation approach isn't building confidence.",
+        "speaker": "narrator",
+        "emotion": "uncomfortable"
+      },
+      "feedback": {
+        "strategy": "avoiding",
+        "effectiveness": "low",
+        "explanation": "Escalating peer-level resource conflicts often damages relationships and doesn't address the underlying coordination issues. Teams prefer to solve problems collaboratively.",
+        "skillsUsed": ["hierarchical thinking"],
+        "consequences": "Team confidence decreases, relationships become more formal, collaborative problem-solving skills don't develop"
+      },
+      "choices": [
+        {
+          "id": "return_to_collaboration",
+          "text": "Acknowledge escalation isn't the best approach and refocus on team solutions",
+          "strategy": "collaborating",
+          "nextNode": "collaborative_recovery"
+        },
+        {
+          "id": "partial_escalation",
+          "text": "Suggest escalating only if the team can't find a solution in the next hour",
+          "strategy": "compromising",
+          "nextNode": "deadline_pressure"
+        },
+        {
+          "id": "proceed_with_escalation",
+          "text": "Insist that management input is necessary for proper prioritization",
+          "strategy": "competing",
+          "nextNode": "management_involvement"
+        }
+      ]
+    },
+    "collaborative_recovery": {
+      "type": "outcome",
+      "content": {
+        "title": "Returning to Team Solutions",
+        "text": "You acknowledge: 'You're right, we can solve this ourselves. We have smart people who understand the business needs.' This refocuses the group. Maria says: 'Actually, what if we could get preliminary campaign visuals from Sam, then use them to get stakeholder feedback while Sam works on the product mockups?' David nods: 'That could work - we could iterate both projects based on feedback.'",
+        "speaker": "narrator",
+        "emotion": "refocused"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "high",
+        "explanation": "Acknowledging the misstep and refocusing on collaborative problem-solving rebuilds team confidence and leads to innovative solutions.",
+        "skillsUsed": ["course correction", "team empowerment", "collaborative leadership"],
+        "consequences": "Team confidence increases, creative solutions emerge, relationships strengthen"
+      },
+      "choices": [
+        {
+          "id": "iterative_approach",
+          "text": "Support the iterative feedback approach Maria and David are developing",
+          "strategy": "collaborating",
+          "nextNode": "iterative_success"
+        },
+        {
+          "id": "add_project_management",
+          "text": "Offer to coordinate the feedback loops and timeline to make this work smoothly",
+          "strategy": "accommodating",
+          "nextNode": "coordination_role"
+        }
+      ]
+    },
+    "stock_solution": {
+      "type": "resolution",
+      "content": {
+        "title": "Strategic Compromise",
+        "text": "Maria's team develops the campaign using high-quality stock visuals that Sam quickly customizes with brand elements - taking just one day instead of three. This frees Sam to focus on David's product mockups. The campaign launches successfully, and Sam creates custom campaign visuals the following week for ongoing marketing. Both projects succeed without compromising quality.",
+        "speaker": "narrator",
+        "emotion": "strategic"
+      },
+      "feedback": {
+        "strategy": "compromising",
+        "effectiveness": "high",
+        "explanation": "Sometimes the best compromise involves changing the approach rather than splitting resources. This solution meets immediate needs while preserving quality.",
+        "skillsUsed": ["resource optimization", "phased delivery", "creative problem solving"],
+        "consequences": "Both projects launch successfully, teams learn flexible approaches to resource constraints"
+      },
+      "endings": [
+        {
+          "type": "success",
+          "title": "Flexible Execution",
+          "description": "The teams discover that stock-plus-customization often delivers faster results than full custom work, changing their future project approaches.",
+          "reflection": "When might changing the approach be more effective than fighting over existing resources?"
+        }
+      ]
+    },
+    "forced_compromise": {
+      "type": "resolution",
+      "content": {
+        "title": "Compromise Under Pressure",
+        "text": "You insist everyone must be flexible and split time 50/50. The teams reluctantly agree, but quality suffers on both projects. Sam struggles with constant context switching, delivering work that satisfies neither team fully. The campaign launches with mediocre visuals, and the product mockups lack the detail needed for development. Everyone learns that forced compromises often create lose-lose outcomes.",
+        "speaker": "narrator",
+        "emotion": "disappointed"
+      },
+      "feedback": {
+        "strategy": "competing",
+        "effectiveness": "very_low",
+        "explanation": "Forcing compromises without addressing underlying needs often results in poor outcomes for everyone. Authority without understanding creates resentment.",
+        "skillsUsed": ["authoritative decision making"],
+        "consequences": "Both projects suffer quality issues, team relationships strain, future collaboration becomes more difficult"
+      },
+      "endings": [
+        {
+          "type": "failure",
+          "title": "Forced Solutions Backfire",
+          "description": "The poor results from forced time-splitting teach the teams that resource conflicts need creative solutions, not arbitrary authority.",
+          "reflection": "What are the risks of forcing compromises without understanding the underlying work requirements?"
+        }
+      ]
+    },
+    "external_resources": {
+      "type": "outcome",
+      "content": {
+        "title": "Expanding the Team",
+        "text": "You explore bringing in external help. Sam suggests: 'I know a freelancer who could handle the initial product wireframes, then I could refine them into final mockups.' Maria adds: 'Our agency partner could create campaign concept boards that I could review with Sam.' David is interested: 'That could work - we'd get more total design capacity rather than fighting over Sam's time.'",
+        "speaker": "narrator",
+        "emotion": "optimistic"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "high",
+        "explanation": "Expanding resources rather than fighting over existing ones often creates better outcomes. This approach turns a zero-sum game into a positive-sum solution.",
+        "skillsUsed": ["resource expansion", "network leveraging", "collaborative problem solving"],
+        "consequences": "Total design capacity increases, teams learn to leverage external networks, Sam's workload becomes manageable"
+      },
+      "choices": [
+        {
+          "id": "coordinate_externals",
+          "text": "Offer to help coordinate the external resources and ensure quality alignment",
+          "strategy": "accommodating",
+          "nextNode": "external_coordination"
+        },
+        {
+          "id": "hybrid_approach",
+          "text": "Develop a hybrid plan combining external resources with Sam's expertise",
+          "strategy": "collaborating",
+          "nextNode": "hybrid_solution"
+        }
+      ]
+    },
+    "hybrid_solution": {
+      "type": "resolution",
+      "content": {
+        "title": "Best of All Worlds",
+        "text": "The team develops a sophisticated solution: external contractors handle initial concepts and wireframes, Sam provides art direction and quality control, then adds finishing touches that require deep brand knowledge. This approach leverages everyone's strengths - external speed and capacity, Sam's expertise and brand understanding. Both projects exceed expectations and deliver on time.",
+        "speaker": "narrator",
+        "emotion": "triumphant"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "very_high",
+        "explanation": "This solution maximizes everyone's strengths while addressing the resource constraint. It creates a sustainable model for future complex projects.",
+        "skillsUsed": ["strategic resource allocation", "strength optimization", "scalable solution design"],
+        "consequences": "Exceptional project outcomes, sustainable workflow established, team capabilities enhanced"
+      },
+      "endings": [
+        {
+          "type": "success",
+          "title": "Scalable Excellence",
+          "description": "The hybrid approach becomes a template for handling future resource constraints, enabling the teams to take on more ambitious projects.",
+          "reflection": "How can resource constraints become opportunities to develop more sophisticated and scalable approaches?"
+        }
+      ]
+    },
+    "management_involvement": {
+      "type": "resolution",
+      "content": {
+        "title": "Hierarchical Resolution",
+        "text": "You escalate to management, who schedule a meeting for next week to discuss priorities. Meanwhile, both deadlines approach with no resolution. Sam ends up working overtime on both projects, delivering rushed work that requires significant revisions. The management meeting results in new processes that could have been developed by the team themselves, but relationships are strained from the escalation.",
+        "speaker": "narrator",
+        "emotion": "formal"
+      },
+      "feedback": {
+        "strategy": "avoiding",
+        "effectiveness": "low",
+        "explanation": "Over-reliance on hierarchy for peer-level resource conflicts often delays solutions and damages collaborative relationships. Teams lose confidence in their problem-solving abilities.",
+        "skillsUsed": ["hierarchical escalation"],
+        "consequences": "Delayed resolution, rushed work quality, reduced team autonomy, more formal processes imposed"
+      },
+      "endings": [
+        {
+          "type": "mixed",
+          "title": "Process Over People",
+          "description": "New formal processes prevent future conflicts but reduce team flexibility and collaborative problem-solving skills.",
+          "reflection": "When does escalation help versus hurt team development and problem-solving capabilities?"
+        }
+      ]
+    },
+    "iterative_success": {
+      "type": "resolution",
+      "content": {
+        "title": "Feedback-Driven Excellence",
+        "text": "The iterative approach works beautifully. Sam creates preliminary campaign visuals that generate valuable stakeholder feedback, allowing Maria to refine the strategy. Meanwhile, David's early product mockups help developers identify technical constraints, leading to better final designs. Both projects benefit from the feedback loops, delivering higher quality than either could have achieved with rushed single iterations.",
+        "speaker": "narrator",
+        "emotion": "accomplished"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "very_high",
+        "explanation": "This solution transforms the resource constraint into an opportunity for better project management through iteration and feedback. Everyone learns the value of collaborative project design.",
+        "skillsUsed": ["iterative project management", "stakeholder feedback integration", "collaborative planning"],
+        "consequences": "Superior project outcomes, enhanced team project management skills, stronger stakeholder relationships"
+      },
+      "endings": [
+        {
+          "type": "success",
+          "title": "Iterative Innovation",
+          "description": "The teams adopt iterative approaches as standard practice, leading to consistently higher quality deliverables and better stakeholder engagement.",
+          "reflection": "How can resource constraints drive innovation in project management and delivery approaches?"
+        }
+      ]
+    }
+  },
+  "learningResources": {
+    "keyTakeaways": [
+      "Resource conflicts often have creative solutions beyond simple time allocation",
+      "Understanding how work actually gets done is crucial for resource planning",
+      "Expanding resources can be more effective than competing for existing ones",
+      "Escalation should be a last resort for peer-level resource coordination",
+      "Collaborative problem-solving builds team capabilities and relationships"
+    ],
+    "relatedStrategies": [
+      "Interest-based negotiation",
+      "Creative problem solving",
+      "Resource optimization",
+      "Stakeholder management",
+      "Project coordination"
+    ],
+    "furtherReading": [
+      "Getting to Yes by Roger Fisher and William Ury",
+      "The Collaborative Way to Divorce by Stuart Webb",
+      "Project Management for the Unofficial Project Manager by Kory Kogon"
+    ],
+    "practiceQuestions": [
+      "How do you typically handle competing demands for your time or resources?",
+      "What creative alternatives might exist when resources seem scarce?",
+      "When is escalation helpful versus harmful in resource conflicts?"
+    ]
+  }
+}

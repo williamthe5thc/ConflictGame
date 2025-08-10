@@ -1,0 +1,46 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="180" fill="#f0f9ff" stroke="#0284c7" stroke-width="8"/>
+  
+  <!-- Casual hoodie/sweater -->
+  <path d="M80 320 Q80 280 120 280 L280 280 Q320 280 320 320 L320 400 L80 400 Z" fill="#6b7280"/>
+  <path d="M120 280 Q140 270 160 270 L240 270 Q260 270 280 280 L280 320 L120 320 Z" fill="#9ca3af"/>
+  
+  <!-- Face -->
+  <circle cx="200" cy="180" r="80" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/>
+  
+  <!-- Hair - unkempt, tired -->
+  <path d="M120 140 Q190 100 200 120 Q210 100 280 140 Q285 160 270 170 Q245 155 220 165 Q200 170 180 165 Q155 155 130 170 Q115 160 120 140" fill="#374151"/>
+  
+  <!-- Eyes - tired, stressed -->
+  <ellipse cx="175" cy="170" rx="12" ry="8" fill="#ffffff"/>
+  <ellipse cx="225" cy="170" rx="12" ry="8" fill="#ffffff"/>
+  <circle cx="175" cy="170" r="6" fill="#6b7280"/>
+  <circle cx="225" cy="170" r="6" fill="#6b7280"/>
+  <circle cx="177" cy="168" r="2" fill="#ffffff"/>
+  <circle cx="227" cy="168" r="2" fill="#ffffff"/>
+  
+  <!-- Eyebrows - worried, tired -->
+  <path d="M165 155 Q175 158 185 155" stroke="#374151" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M215 155 Q225 158 235 155" stroke="#374151" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Dark circles under eyes -->
+  <ellipse cx="175" cy="182" rx="8" ry="3" fill="#d1d5db" opacity="0.6"/>
+  <ellipse cx="225" cy="182" rx="8" ry="3" fill="#d1d5db" opacity="0.6"/>
+  
+  <!-- Nose -->
+  <path d="M200 180 L195 195 Q200 200 205 195 Z" fill="#f59e0b"/>
+  
+  <!-- Mouth - tired, slightly downturned -->
+  <path d="M185 215 Q200 210 215 215" stroke="#374151" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Five o'clock shadow -->
+  <path d="M180 205 Q200 220 220 205" stroke="#d1d5db" stroke-width="2" fill="none" opacity="0.5"/>
+  
+  <!-- Name label -->
+  <rect x="140" y="350" width="120" height="30" rx="15" fill="#6b7280"/>
+  <text x="200" y="370" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Chris</text>
+  
+  <!-- Role indicator -->
+  <text x="200" y="390" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Software Developer</text>
+</svg>

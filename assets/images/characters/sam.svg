@@ -1,0 +1,47 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="180" fill="#fce7f3" stroke="#ec4899" stroke-width="8"/>
+  
+  <!-- Creative casual top -->
+  <path d="M80 320 Q80 280 120 280 L280 280 Q320 280 320 320 L320 400 L80 400 Z" fill="#9333ea"/>
+  <path d="M120 280 Q140 270 160 270 L240 270 Q260 270 280 280 L280 320 L120 320 Z" fill="#f3f4f6"/>
+  
+  <!-- Face -->
+  <circle cx="200" cy="180" r="80" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+  
+  <!-- Hair - creative, slightly messy from stress -->
+  <path d="M120 140 Q180 105 200 125 Q220 105 280 140 Q290 155 275 165 Q250 155 225 160 Q200 175 175 160 Q150 155 125 165 Q110 155 120 140" fill="#dc2626"/>
+  
+  <!-- Eyes - tired but creative -->
+  <ellipse cx="175" cy="170" rx="12" ry="8" fill="#ffffff"/>
+  <ellipse cx="225" cy="170" rx="12" ry="8" fill="#ffffff"/>
+  <circle cx="175" cy="170" r="6" fill="#7c3aed"/>
+  <circle cx="225" cy="170" r="6" fill="#7c3aed"/>
+  <circle cx="177" cy="168" r="2" fill="#ffffff"/>
+  <circle cx="227" cy="168" r="2" fill="#ffffff"/>
+  
+  <!-- Eyebrows - slightly worried -->
+  <path d="M165 155 Q175 153 185 158" stroke="#dc2626" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M215 158 Q225 153 235 155" stroke="#dc2626" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Nose -->
+  <path d="M200 180 L195 195 Q200 200 205 195 Z" fill="#f59e0b"/>
+  
+  <!-- Mouth - stressed, slight frown -->
+  <path d="M185 215 Q200 208 215 215" stroke="#374151" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Creative earrings -->
+  <circle cx="145" cy="185" r="3" fill="#ec4899"/>
+  <circle cx="255" cy="185" r="3" fill="#ec4899"/>
+  
+  <!-- Stress indicator (small bags under eyes) -->
+  <path d="M168 180 Q175 183 182 180" stroke="#d1d5db" stroke-width="1" fill="none"/>
+  <path d="M218 180 Q225 183 232 180" stroke="#d1d5db" stroke-width="1" fill="none"/>
+  
+  <!-- Name label -->
+  <rect x="140" y="350" width="120" height="30" rx="15" fill="#9333ea"/>
+  <text x="200" y="370" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Sam</text>
+  
+  <!-- Role indicator -->
+  <text x="200" y="390" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Senior Designer</text>
+</svg>

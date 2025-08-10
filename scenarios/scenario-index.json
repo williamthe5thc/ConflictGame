@@ -1,0 +1,59 @@
+{
+  "scenarios": [
+    {
+      "id": "scenario-001",
+      "title": "The Email Misunderstanding",
+      "description": "Navigate a communication breakdown between two colleagues over email tone and response styles.",
+      "category": "communication",
+      "difficulty": "beginner",
+      "estimatedTime": "5-8 minutes",
+      "unlocked": true,
+      "file": "scenarios/scenario-001.json"
+    },
+    {
+      "id": "scenario-002",
+      "title": "The Resource Competition",
+      "description": "Navigate competing demands for a key team member's time when two urgent projects collide.",
+      "category": "workload",
+      "difficulty": "intermediate",
+      "estimatedTime": "8-12 minutes",
+      "unlocked": true,
+      "file": "scenarios/scenario-002.json"
+    },
+    {
+      "id": "scenario-003",
+      "title": "The Performance Gap",
+      "description": "Address a team member's declining performance while balancing empathy, accountability, and team dynamics.",
+      "category": "performance",
+      "difficulty": "advanced",
+      "estimatedTime": "10-15 minutes",
+      "unlocked": true,
+      "file": "scenarios/scenario-003.json"
+    }
+  ],
+  "categories": [
+    {
+      "id": "communication",
+      "name": "Communication Conflicts",
+      "description": "Scenarios involving misunderstandings, different communication styles, and information gaps",
+      "icon": "💬"
+    },
+    {
+      "id": "workload",
+      "name": "Workload Disputes", 
+      "description": "Conflicts over resource allocation, competing priorities, and work distribution",
+      "icon": "⚖️"
+    },
+    {
+      "id": "performance",
+      "name": "Performance Management",
+      "description": "Situations involving underperformance, delegation challenges, and accountability",
+      "icon": "📊"
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "lastUpdated": "2025-08-09",
+    "totalScenarios": 3
+  }
+}

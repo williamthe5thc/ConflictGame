@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conflict Management Training Simulator</title>
+    <meta name="description" content="Interactive workplace conflict resolution training through realistic scenarios">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header class="app-header">
+            <nav class="main-navigation">
+                <div class="nav-brand">
+                    <h1 class="app-title">Conflict Resolution Trainer</h1>
+                </div>
+                <div class="nav-controls">
+                    <button id="settings-btn" class="nav-button" aria-label="Settings">
+                        ⚙️
+                    </button>
+                    <button id="view-mode-btn" class="nav-button" aria-label="Switch view mode">
+                        👁️
+                    </button>
+                </div>
+            </nav>
+            
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                    <span id="progress-text" class="progress-text">Ready to start</span>
+                </div>
+                
+                <nav id="breadcrumb-trail" class="breadcrumb-trail" aria-label="Navigation path">
+                    <!-- Breadcrumbs will be inserted here by JavaScript -->
+                </nav>
+            </div>
+        </header>
+        
+        <main class="app-main" role="main" aria-label="Conflict scenario">
+            <div id="scenario-container" class="scenario-container">
+                <!-- Dynamic content will be loaded here -->
+                <div id="welcome-screen" class="welcome-screen">
+                    <div class="welcome-content">
+                        <h2>Welcome to Conflict Resolution Training</h2>
+                        <p>Practice workplace conflict management in a safe, interactive environment. 
+                           You can explore different approaches and see how they play out - there's no "wrong" choice, 
+                           only learning opportunities.</p>
+                        
+                        <div class="scenario-selection">
+                            <h3>Available Scenarios</h3>
+                            <div id="scenario-list" class="scenario-list">
+                                <!-- Scenario buttons will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="learning-objectives">
+                            <h3>What You'll Learn</h3>
+                            <ul>
+                                <li>Five conflict resolution strategies (Thomas-Kilmann Model)</li>
+                                <li>Active listening and empathy skills</li>
+                                <li>How to separate people from problems</li>
+                                <li>When to use different approaches</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="scenario-display" class="scenario-display hidden">
+                    <!-- Scenario content will be displayed here -->
+                </div>
+                
+                <div id="loading-screen" class="loading-screen hidden">
+                    <div class="loading-content">
+                        <div class="loading-spinner"></div>
+                        <p>Loading scenario...</p>
+                    </div>
+                </div>
+                
+                <div id="error-screen" class="error-screen hidden">
+                    <div class="error-content">
+                        <div class="error-icon">⚠️</div>
+                        <h3>Something went wrong</h3>
+                        <p id="error-message">Please check your connection and try again.</p>
+                        <button id="retry-btn" class="retry-button">Retry</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="app-footer">
+            <div class="footer-controls">
+                <button id="back-btn" class="back-button" disabled aria-label="Go back">
+                    ← Go Back
+                </button>
+                
+                <div class="footer-info">
+                    <span id="choice-counter" class="choice-counter">Choice 1</span>
+                    <span id="save-status" class="save-status">Auto-saved</span>
+                </div>
+                
+                <button id="menu-btn" class="menu-button" aria-label="Main menu">
+                    Menu
+                </button>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Live region for screen reader announcements -->
+    <div id="sr-announcements" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    
+    <!-- JavaScript -->
+    <script src="js/storage-manager.js"></script>
+    <script src="js/game-engine.js"></script>
+    <script src="js/ui-manager.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

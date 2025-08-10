@@ -1,0 +1,541 @@
+{
+  "id": "scenario-003",
+  "metadata": {
+    "title": "The Performance Gap",
+    "description": "Address a team member's declining performance while balancing empathy, accountability, and team dynamics",
+    "category": "performance",
+    "difficulty": "advanced", 
+    "estimatedTime": "10-15 minutes",
+    "learningObjectives": [
+      "Practice difficult performance conversations",
+      "Balance empathy with accountability", 
+      "Learn to address team dynamics around performance",
+      "Explore supportive vs. corrective approaches"
+    ],
+    "conflictTypes": ["performance management", "team frustration", "accountability", "personal issues", "leadership challenges"],
+    "author": "Conflict Management Training Team",
+    "version": "1.0",
+    "dateCreated": "2025-08-09"
+  },
+  "characters": {
+    "player": {
+      "name": "You",
+      "role": "Team Lead", 
+      "description": "A team lead balancing friendship, leadership responsibilities, and team performance"
+    },
+    "chris": {
+      "name": "Chris",
+      "role": "Software Developer",
+      "description": "Previously reliable team member now struggling with performance and personal issues",
+      "portrait": "assets/images/characters/chris.svg"
+    },
+    "team_members": {
+      "name": "Team",
+      "role": "Development Team",
+      "description": "Frustrated team members who are picking up extra work due to Chris's performance issues",
+      "portrait": "assets/images/characters/alex.svg"
+    },
+    "manager": {
+      "name": "Leslie",
+      "role": "Engineering Manager",
+      "description": "Your manager who expects the team to deliver but values employee support",
+      "portrait": "assets/images/characters/leslie.svg"
+    }
+  },
+  "settings": {
+    "location": "Software development office with individual workstations",
+    "time": "Thursday afternoon, sprint deadline approaching",
+    "background": "assets/images/backgrounds/office-workspace.svg",
+    "ambientSound": "assets/audio/ambient/office-ambience.mp3"
+  },
+  "nodes": {
+    "start": {
+      "type": "scene",
+      "content": {
+        "title": "The Team's Growing Frustration",
+        "text": "Your team is falling behind on the sprint goals, and you notice a pattern: Chris has missed three deadlines in six weeks, submitted code with unusual bugs, and seems disengaged in meetings. Yesterday, two team members privately expressed frustration about picking up Chris's unfinished work. Chris used to be one of your strongest contributors. You need to address this situation before it affects the entire team's morale and delivery.",
+        "speaker": "narrator",
+        "emotion": "concerned"
+      },
+      "choices": [
+        {
+          "id": "private_conversation",
+          "text": "Have a private, supportive conversation with Chris to understand what's happening",
+          "strategy": "active_listening",
+          "nextNode": "supportive_approach"
+        },
+        {
+          "id": "performance_meeting",
+          "text": "Schedule a formal performance discussion focused on work standards and expectations",
+          "strategy": "competing",
+          "nextNode": "formal_performance_talk"
+        },
+        {
+          "id": "team_discussion",
+          "text": "Address the workload distribution issue with the whole team present",
+          "strategy": "avoiding",
+          "nextNode": "public_team_discussion"
+        },
+        {
+          "id": "seek_manager_guidance",
+          "text": "Consult with your manager Leslie about how to handle the performance issues",
+          "strategy": "accommodating",
+          "nextNode": "manager_consultation"
+        }
+      ]
+    },
+    "supportive_approach": {
+      "type": "outcome",
+      "content": {
+        "title": "Opening the Door to Understanding",
+        "text": "You invite Chris for coffee away from the office. 'I've noticed you seem stressed lately, and I wanted to check in - both as your team lead and as someone who cares about you.' Chris hesitates, then opens up: 'My partner and I are going through a divorce, and my parent was just diagnosed with dementia. I'm barely keeping my head above water, but I didn't want to burden the team with personal stuff.'",
+        "speaker": "narrator",
+        "emotion": "vulnerable"
+      },
+      "feedback": {
+        "strategy": "active_listening",
+        "effectiveness": "high",
+        "explanation": "Creating a safe, private space for conversation allows the real issues to surface. Understanding the context doesn't excuse performance problems but helps identify appropriate support and solutions.",
+        "skillsUsed": ["empathetic leadership", "safe space creation", "personal-professional balance"],
+        "consequences": "Chris feels supported and trusted; real issues are identified"
+      },
+      "choices": [
+        {
+          "id": "offer_support_and_plan",
+          "text": "Offer support resources and work together on a performance improvement plan",
+          "strategy": "collaborating",
+          "nextNode": "collaborative_support_plan"
+        },
+        {
+          "id": "temporary_accommodation",
+          "text": "Suggest temporary workload reduction while Chris addresses personal issues",
+          "strategy": "accommodating",
+          "nextNode": "temporary_support"
+        },
+        {
+          "id": "professional_boundaries",
+          "text": "Express empathy but emphasize that work standards must be maintained",
+          "strategy": "compromising",
+          "nextNode": "empathetic_boundaries"
+        },
+        {
+          "id": "team_transparency",
+          "text": "Suggest Chris share appropriate details with the team to reduce frustration",
+          "strategy": "active_listening",
+          "nextNode": "team_communication"
+        }
+      ]
+    },
+    "collaborative_support_plan": {
+      "type": "outcome",
+      "content": {
+        "title": "Building a Bridge Forward",
+        "text": "You and Chris work together on a plan: temporarily reduce Chris's workload by 20%, connect Chris with the Employee Assistance Program for counseling support, establish weekly check-ins to monitor progress and provide guidance, and set clear milestones for returning to full performance within 8 weeks. Chris is grateful: 'I was afraid you'd think I was making excuses. Having a plan makes this feel manageable.'",
+        "speaker": "narrator",
+        "emotion": "hopeful"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "very_high",
+        "explanation": "This approach balances empathy with accountability by creating structure and support while maintaining performance expectations. It addresses root causes rather than just symptoms.",
+        "skillsUsed": ["collaborative planning", "resource connection", "performance management", "emotional support"],
+        "consequences": "Chris has clear path forward with support; team gets transparency and timeline"
+      },
+      "choices": [
+        {
+          "id": "communicate_to_team",
+          "text": "Help Chris communicate the plan to the team in an appropriate way",
+          "strategy": "collaborating",
+          "nextNode": "transparent_team_communication"
+        },
+        {
+          "id": "monitor_closely",
+          "text": "Focus on intensive monitoring and support during the transition period",
+          "strategy": "accommodating",
+          "nextNode": "close_monitoring"
+        },
+        {
+          "id": "document_plan",
+          "text": "Document the plan formally to protect both Chris and the team",
+          "strategy": "competing",
+          "nextNode": "formal_documentation"
+        }
+      ]
+    },
+    "transparent_team_communication": {
+      "type": "resolution",
+      "content": {
+        "title": "Team Understanding and Support",
+        "text": "Chris shares with the team: 'I'm dealing with some significant personal challenges that have affected my work. I'm working with our team lead on a support plan, and I'll be taking on a slightly reduced workload for the next few weeks while I get back on track.' The team responds with understanding and offers help. One colleague says: 'We've all been there - let us know how we can support you.' The team's frustration turns into collective support.",
+        "speaker": "narrator",
+        "emotion": "supportive"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "very_high",
+        "explanation": "Transparent communication transforms team frustration into support by helping colleagues understand the situation. This builds team resilience and psychological safety.",
+        "skillsUsed": ["transparent communication", "team building", "vulnerability leadership", "collective support"],
+        "consequences": "Team cohesion strengthens, Chris feels supported, performance pressure reduces while accountability remains"
+      },
+      "endings": [
+        {
+          "type": "success",
+          "title": "Team Resilience Built",
+          "description": "The team develops a culture of supporting members through difficult times while maintaining performance standards, becoming stronger and more resilient.",
+          "reflection": "How can transparency about struggles create stronger teams rather than weakness?"
+        }
+      ]
+    },
+    "formal_performance_talk": {
+      "type": "outcome",
+      "content": {
+        "title": "Focusing on Standards",
+        "text": "You schedule a formal meeting with Chris. 'I need to discuss your recent performance. You've missed three deadlines, and the code quality has been inconsistent. What's your plan to get back on track?' Chris becomes defensive: 'I'm doing my best. These deadlines are unrealistic anyway.' The conversation becomes tense, with Chris shutting down rather than opening up about the real issues.",
+        "speaker": "narrator",
+        "emotion": "tense"
+      },
+      "feedback": {
+        "strategy": "competing",
+        "effectiveness": "low",
+        "explanation": "While performance standards are important, leading with criticism without understanding context often puts people on the defensive and misses opportunities to address root causes.",
+        "skillsUsed": ["performance documentation", "standard setting"],
+        "consequences": "Chris becomes defensive, real issues remain hidden, relationship trust decreases"
+      },
+      "choices": [
+        {
+          "id": "soften_approach",
+          "text": "Recognize the approach isn't working and shift to a more supportive tone",
+          "strategy": "accommodating",
+          "nextNode": "course_correction"
+        },
+        {
+          "id": "escalate_consequences",
+          "text": "Make clear that continued performance issues will result in formal disciplinary action",
+          "strategy": "competing",
+          "nextNode": "disciplinary_threat"
+        },
+        {
+          "id": "ask_for_perspective",
+          "text": "Ask Chris to share their perspective on what's making the work challenging",
+          "strategy": "active_listening",
+          "nextNode": "delayed_listening"
+        }
+      ]
+    },
+    "course_correction": {
+      "type": "outcome",
+      "content": {
+        "title": "Recovering from a Rough Start",
+        "text": "You pause and change your approach: 'I can see this conversation started off on the wrong foot. I'm concerned about you and the team, and I want to understand what's really going on so we can figure out how to help.' Chris relaxes slightly: 'I appreciate that. I guess I felt attacked and got defensive. There are some things happening in my personal life that are making work really hard right now.'",
+        "speaker": "narrator",
+        "emotion": "recovering"
+      },
+      "feedback": {
+        "strategy": "accommodating",
+        "effectiveness": "medium",
+        "explanation": "Course-correcting when an approach isn't working shows emotional intelligence and can rescue difficult conversations, though it requires rebuilding trust that was initially damaged.",
+        "skillsUsed": ["self-awareness", "conversational recovery", "approach adaptation"],
+        "consequences": "Trust partially restored, Chris begins to open up, but initial defensiveness lingers"
+      },
+      "choices": [
+        {
+          "id": "rebuild_with_support",
+          "text": "Focus on rebuilding trust and understanding Chris's situation",
+          "strategy": "collaborating",
+          "nextNode": "trust_rebuilding"
+        },
+        {
+          "id": "balance_support_accountability",
+          "text": "Acknowledge personal challenges while maintaining performance expectations",
+          "strategy": "compromising",
+          "nextNode": "balanced_approach"
+        }
+      ]
+    },
+    "manager_consultation": {
+      "type": "outcome",
+      "content": {
+        "title": "Seeking Guidance",
+        "text": "You discuss the situation with Leslie: 'Chris has been struggling lately, and it's affecting the team. I want to handle this supportively but also need to maintain our delivery commitments.' Leslie responds: 'I appreciate you bringing this to me. What's your read on whether this is a capability issue or something else? We have resources available to help, but we also need to be fair to the rest of the team.'",
+        "speaker": "narrator",
+        "emotion": "consultative"
+      },
+      "feedback": {
+        "strategy": "accommodating",
+        "effectiveness": "medium",
+        "explanation": "Seeking guidance shows good judgment, but it's important to balance getting support with maintaining your team leadership role and direct relationship with team members.",
+        "skillsUsed": ["seeking guidance", "escalation judgment", "resource awareness"],
+        "consequences": "You gain management support and resources, but need to maintain direct leadership relationship"
+      },
+      "choices": [
+        {
+          "id": "collaborative_management",
+          "text": "Work with Leslie to develop a supportive approach that addresses both performance and personal issues",
+          "strategy": "collaborating",
+          "nextNode": "management_supported_approach"
+        },
+        {
+          "id": "hr_involvement",
+          "text": "Suggest involving HR to ensure proper documentation and support resources",
+          "strategy": "competing",
+          "nextNode": "hr_formal_process"
+        },
+        {
+          "id": "direct_leadership",
+          "text": "Take Leslie's guidance but handle the conversation directly with Chris yourself",
+          "strategy": "accommodating",
+          "nextNode": "guided_direct_approach"
+        }
+      ]
+    },
+    "management_supported_approach": {
+      "type": "resolution",
+      "content": {
+        "title": "Leadership Alignment",
+        "text": "You and Leslie develop a comprehensive approach: you'll have the initial supportive conversation with Chris, Leslie will provide backup resources including EAP and flexible work arrangements, and you'll both monitor progress with regular check-ins. This ensures Chris gets proper support while maintaining team accountability. The approach successfully addresses both Chris's personal challenges and team performance needs.",
+        "speaker": "narrator",
+        "emotion": "aligned"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "high",
+        "explanation": "Collaborating with management creates comprehensive support while maintaining your direct leadership relationship. This approach provides resources and backup while keeping you as the primary relationship owner.",
+        "skillsUsed": ["management collaboration", "resource coordination", "leadership alignment"],
+        "consequences": "Chris receives comprehensive support, team sees effective leadership, management confidence in your abilities increases"
+      },
+      "endings": [
+        {
+          "type": "success",
+          "title": "Supported Leadership",
+          "description": "The collaborative approach with management becomes a model for handling similar situations, creating a supportive yet accountable team culture.",
+          "reflection": "How can collaboration with management enhance rather than undermine direct leadership relationships?"
+        }
+      ]
+    },
+    "public_team_discussion": {
+      "type": "outcome",
+      "content": {
+        "title": "Awkward Public Exposure",
+        "text": "In the team meeting, you address workload distribution: 'I've noticed some tasks are taking longer than expected, and I want to make sure we're supporting each other.' Chris looks uncomfortable as team members mention specific delayed deliverables. The conversation becomes awkward, with Chris feeling singled out and team members unsure whether they can speak honestly about the impact on their work.",
+        "speaker": "narrator",
+        "emotion": "uncomfortable"
+      },
+      "feedback": {
+        "strategy": "avoiding",
+        "effectiveness": "very_low",
+        "explanation": "Addressing individual performance issues in group settings often creates embarrassment and doesn't allow for the private, supportive conversation needed to understand and address root causes.",
+        "skillsUsed": ["group facilitation"],
+        "consequences": "Chris feels publicly shamed, team becomes uncomfortable with direct feedback, real issues remain unaddressed"
+      },
+      "choices": [
+        {
+          "id": "private_followup",
+          "text": "Quickly pivot to general topics and plan to follow up with Chris privately",
+          "strategy": "accommodating",
+          "nextNode": "damage_control"
+        },
+        {
+          "id": "continue_public",
+          "text": "Continue the public discussion to ensure transparency and accountability",
+          "strategy": "competing",
+          "nextNode": "public_accountability"
+        },
+        {
+          "id": "team_problem_solving",
+          "text": "Shift focus to how the team can better support each other during challenging periods",
+          "strategy": "collaborating",
+          "nextNode": "team_support_focus"
+        }
+      ]
+    },
+    "damage_control": {
+      "type": "outcome",
+      "content": {
+        "title": "Repairing the Mistake",
+        "text": "You quickly shift the meeting to general project topics and catch Chris afterward: 'I realize that meeting was awkward - I should have talked with you privately first. Can we have coffee tomorrow to discuss how I can better support you?' Chris appreciates the acknowledgment: 'Thanks for recognizing that. I was feeling pretty exposed in there. I'd appreciate a private conversation.'",
+        "speaker": "narrator",
+        "emotion": "apologetic"
+      },
+      "feedback": {
+        "strategy": "accommodating",
+        "effectiveness": "medium",
+        "explanation": "Recognizing and correcting a mistake shows emotional intelligence and can prevent further damage to the relationship, though some trust repair is needed.",
+        "skillsUsed": ["mistake recognition", "relationship repair", "approach correction"],
+        "consequences": "Trust partially restored, Chris appreciates the correction, but some embarrassment from public exposure remains"
+      },
+      "choices": [
+        {
+          "id": "rebuild_private_trust",
+          "text": "Focus the private conversation on rebuilding trust and understanding Chris's needs",
+          "strategy": "collaborating",
+          "nextNode": "trust_focused_rebuilding"
+        },
+        {
+          "id": "team_reputation_repair",
+          "text": "Also address the team dynamic to ensure Chris doesn't feel isolated",
+          "strategy": "accommodating",
+          "nextNode": "team_relationship_repair"
+        }
+      ]
+    },
+    "temporary_support": {
+      "type": "outcome",
+      "content": {
+        "title": "Breathing Room Approach",
+        "text": "You arrange for Chris to take on 75% of normal workload for the next month: 'Let's reduce your sprint commitment while you handle these personal challenges. The team can absorb the extra work temporarily.' Chris is relieved but concerned: 'I appreciate this, but I don't want the team to resent me for not pulling my weight. And I'm worried about falling behind professionally.'",
+        "speaker": "narrator",
+        "emotion": "conflicted"
+      },
+      "feedback": {
+        "strategy": "accommodating",
+        "effectiveness": "medium",
+        "explanation": "Temporary support can be helpful, but without clear communication to the team and plans for return to full performance, it may create resentment and doesn't address skill development needs.",
+        "skillsUsed": ["workload adjustment", "temporary accommodation"],
+        "consequences": "Chris gets immediate relief but worries about team dynamics and professional development"
+      },
+      "choices": [
+        {
+          "id": "transparent_team_plan",
+          "text": "Work with Chris to communicate the temporary plan transparently to the team",
+          "strategy": "collaborating",
+          "nextNode": "team_aware_support"
+        },
+        {
+          "id": "skill_development_focus",
+          "text": "Use the reduced workload time for skill development and process improvement",
+          "strategy": "collaborating",
+          "nextNode": "development_opportunity"
+        },
+        {
+          "id": "quiet_accommodation",
+          "text": "Keep the arrangement private and handle team questions as they arise",
+          "strategy": "avoiding",
+          "nextNode": "private_accommodation"
+        }
+      ]
+    },
+    "team_aware_support": {
+      "type": "resolution",
+      "content": {
+        "title": "Collective Understanding",
+        "text": "Chris shares with the team: 'I'm going through some personal challenges and will be working at reduced capacity for a few weeks with a clear plan to get back to full strength.' The team responds supportively, with offers to help and understanding about the temporary arrangement. One teammate says: 'We've all needed support at different times - we've got your back.' The temporary arrangement works because everyone understands it's temporary and purposeful.",
+        "speaker": "narrator",
+        "emotion": "supportive"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "high",
+        "explanation": "Transparent communication about temporary support creates team understanding and prevents resentment. It models a supportive team culture while maintaining clear expectations.",
+        "skillsUsed": ["transparent communication", "team support", "temporary accommodation", "expectation management"],
+        "consequences": "Team supports Chris through difficult period, culture of mutual support develops, performance expectations remain clear"
+      },
+      "endings": [
+        {
+          "type": "success",
+          "title": "Mutual Support Culture",
+          "description": "The team develops a culture where members support each other through difficult times, creating resilience and loyalty while maintaining performance standards.",
+          "reflection": "How can temporary accommodations strengthen rather than weaken team performance culture?"
+        }
+      ]
+    },
+    "disciplinary_threat": {
+      "type": "resolution",
+      "content": {
+        "title": "The Ultimatum Backfires",
+        "text": "You escalate: 'If performance doesn't improve immediately, we'll need to consider formal disciplinary action.' Chris responds angrily: 'Fine, I'll start looking for another job where people understand that life happens.' The relationship deteriorates rapidly. Chris does minimum work while job searching, team morale drops as they watch the conflict unfold, and you lose a formerly valuable team member who could have been supported through a difficult period.",
+        "speaker": "narrator",
+        "emotion": "adversarial"
+      },
+      "feedback": {
+        "strategy": "competing",
+        "effectiveness": "very_low",
+        "explanation": "Threats without understanding root causes often escalate conflicts and can result in losing valuable employees who could have been supported through temporary difficulties.",
+        "skillsUsed": ["disciplinary threats", "authority assertion"],
+        "consequences": "Chris becomes disengaged and seeks other employment, team witnesses poor conflict resolution, valuable employee and knowledge lost"
+      },
+      "endings": [
+        {
+          "type": "failure",
+          "title": "Lost Talent and Trust",
+          "description": "The harsh approach results in losing a previously strong performer and damages team trust in leadership's support during difficult times.",
+          "reflection": "What are the long-term costs of prioritizing immediate performance pressure over understanding and supporting team members?"
+        }
+      ]
+    },
+    "development_opportunity": {
+      "type": "resolution",
+      "content": {
+        "title": "Growth Through Challenge",
+        "text": "You and Chris use the reduced workload time for professional development: learning new technologies, improving code review processes, and mentoring junior developers. This approach helps Chris feel professionally valued while managing personal stress. When Chris returns to full capacity, the new skills benefit the entire team. The challenge becomes a growth opportunity rather than just a problem to manage.",
+        "speaker": "narrator",
+        "emotion": "growth-oriented"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "very_high",
+        "explanation": "Using support time for development creates positive outcomes for both individual and team. It maintains professional engagement while accommodating personal challenges.",
+        "skillsUsed": ["development planning", "skill building", "positive reframing", "team benefit creation"],
+        "consequences": "Chris grows professionally while managing personal challenges, team benefits from new skills and processes, positive precedent set"
+      },
+      "endings": [
+        {
+          "type": "success",
+          "title": "Challenge as Catalyst",
+          "description": "The approach of using support periods for development becomes a team standard, turning temporary performance challenges into growth opportunities.",
+          "reflection": "How can performance support periods become opportunities for professional development rather than just accommodation?"
+        }
+      ]
+    },
+    "hr_formal_process": {
+      "type": "resolution",
+      "content": {
+        "title": "Process Over Relationship",
+        "text": "You involve HR, who initiates formal performance documentation and improvement processes. While this protects the organization legally, it creates a formal, transactional relationship with Chris. The process works to address performance standards, but the personal trust and team relationship are damaged. Chris improves performance to meet requirements but loses the engagement and innovation that made them valuable previously.",
+        "speaker": "narrator",
+        "emotion": "formal"
+      },
+      "feedback": {
+        "strategy": "competing",
+        "effectiveness": "medium",
+        "explanation": "Formal processes ensure compliance and documentation but can damage relationships and reduce employee engagement. They should be balanced with supportive leadership approaches.",
+        "skillsUsed": ["formal process management", "documentation", "compliance"],
+        "consequences": "Performance standards maintained but at cost of engagement, creativity, and team relationship trust"
+      },
+      "endings": [
+        {
+          "type": "mixed",
+          "title": "Compliance Over Culture",
+          "description": "The formal approach solves the immediate performance issue but creates a more transactional, less innovative team culture.",
+          "reflection": "What are the trade-offs between formal performance processes and relationship-based leadership approaches?"
+        }
+      ]
+    }
+  },
+  "learningResources": {
+    "keyTakeaways": [
+      "Performance issues often have underlying causes that need to be understood",
+      "Balancing empathy with accountability requires collaborative problem-solving",
+      "Private, supportive conversations are usually more effective than formal criticism",
+      "Team transparency about challenges can build support rather than resentment",
+      "Early intervention and support often prevent the need for disciplinary action"
+    ],
+    "relatedStrategies": [
+      "Supportive leadership",
+      "Performance coaching",
+      "Difficult conversations",
+      "Team communication",
+      "Change management"
+    ],
+    "furtherReading": [
+      "Crucial Conversations by Kerry Patterson",
+      "The Culture Code by Daniel Coyle",
+      "Radical Candor by Kim Scott",
+      "First, Break All the Rules by Marcus Buckingham"
+    ],
+    "practiceQuestions": [
+      "How do you balance empathy with accountability in performance situations?",
+      "What signs might indicate that performance issues have personal rather than professional causes?",
+      "When is transparency helpful versus harmful in team performance situations?"
+    ]
+  }
+}

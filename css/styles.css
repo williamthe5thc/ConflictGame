@@ -1,0 +1,479 @@
+/* =============================================================================
+   CONFLICT MANAGEMENT TRAINING SIMULATOR - MAIN STYLES
+   Based on UI/UX specifications with mobile-first responsive design
+============================================================================= */
+
+/* CSS Custom Properties (Variables) */
+:root {
+  /* Primary Colors */
+  --primary-blue: #2563eb;
+  --primary-blue-light: #3b82f6;
+  --primary-blue-dark: #1d4ed8;
+  
+  /* Neutral Colors */
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+  
+  /* Semantic Colors */
+  --success-green: #10b981;
+  --warning-yellow: #f59e0b;
+  --error-red: #ef4444;
+  --info-blue: #06b6d4;
+  
+  /* Strategy Colors */
+  --collaborating: #10b981;
+  --compromising: #f59e0b;
+  --competing: #ef4444;
+  --accommodating: #8b5cf6;
+  --avoiding: #6b7280;
+  --active-listening: #06b6d4;
+  
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Type Scale */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--neutral-800);
+  background-color: var(--neutral-50);
+  min-height: 100vh;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Main Application Layout */
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.app-header {
+  background: white;
+  border-bottom: 1px solid var(--neutral-200);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.main-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--primary-blue-dark);
+}
+
+.nav-controls {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.nav-button {
+  background: var(--neutral-100);
+  border: 1px solid var(--neutral-300);
+  border-radius: 0.375rem;
+  padding: var(--space-2);
+  cursor: pointer;
+  font-size: var(--text-base);
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  background: var(--neutral-200);
+  border-color: var(--primary-blue);
+}
+
+/* Progress Container */
+.progress-container {
+  padding: var(--space-2) var(--space-4);
+  background: var(--neutral-50);
+  border-top: 1px solid var(--neutral-200);
+}
+
+.progress-bar {
+  background: var(--neutral-200);
+  border-radius: 0.5rem;
+  height: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--space-2);
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-blue-light));
+  height: 100%;
+  border-radius: 0.5rem;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: var(--text-sm);
+  color: var(--neutral-600);
+  display: block;
+  text-align: center;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-trail {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+  background: none;
+  border: none;
+  color: var(--neutral-600);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.breadcrumb-item.current {
+  color: var(--primary-blue);
+  font-weight: 500;
+}
+
+.breadcrumb-item:hover:not(.current) {
+  background: var(--neutral-200);
+}
+
+.breadcrumb-separator {
+  color: var(--neutral-400);
+  font-size: var(--text-sm);
+}
+
+/* Main Content Area */
+.app-main {
+  flex: 1;
+  padding: var(--space-4);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.scenario-container {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  min-height: 60vh;
+}
+
+/* Welcome Screen */
+.welcome-screen {
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.welcome-content h2 {
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--neutral-900);
+  margin-bottom: var(--space-6);
+}
+
+.welcome-content p {
+  font-size: var(--text-lg);
+  color: var(--neutral-600);
+  margin-bottom: var(--space-8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scenario-selection,
+.learning-objectives {
+  margin-bottom: var(--space-8);
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scenario-selection h3,
+.learning-objectives h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--neutral-800);
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.scenario-list {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.learning-objectives ul {
+  list-style: none;
+  padding: 0;
+}
+
+.learning-objectives li {
+  padding: var(--space-3);
+  background: var(--neutral-50);
+  border-left: 4px solid var(--primary-blue);
+  margin-bottom: var(--space-2);
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+
+/* Loading and Error States */
+.loading-screen,
+.error-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: var(--space-8);
+}
+
+.loading-content,
+.error-content {
+  text-align: center;
+  max-width: 400px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--neutral-200);
+  border-top: 4px solid var(--primary-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto var(--space-4);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-icon {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-4);
+}
+
+.error-content h3 {
+  font-size: var(--text-xl);
+  color: var(--neutral-800);
+  margin-bottom: var(--space-2);
+}
+
+.error-content p {
+  color: var(--neutral-600);
+  margin-bottom: var(--space-6);
+}
+
+/* Footer */
+.app-footer {
+  background: white;
+  border-top: 1px solid var(--neutral-200);
+  padding: var(--space-4);
+}
+
+.footer-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-button,
+.menu-button,
+.retry-button {
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: var(--space-3) var(--space-6);
+  border-radius: 0.5rem;
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover:not(:disabled),
+.menu-button:hover,
+.retry-button:hover {
+  background: var(--primary-blue-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.back-button:disabled {
+  background: var(--neutral-300);
+  color: var(--neutral-500);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.choice-counter,
+.save-status {
+  font-size: var(--text-sm);
+  color: var(--neutral-600);
+}
+
+.save-status {
+  color: var(--success-green);
+}
+
+/* Focus Styles for Accessibility */
+button:focus-visible,
+.nav-button:focus-visible,
+.breadcrumb-item:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Responsive Design - Tablet */
+@media (min-width: 768px) {
+  .app-title {
+    font-size: var(--text-xl);
+  }
+  
+  .scenario-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .footer-info {
+    flex-direction: row;
+    gap: var(--space-4);
+  }
+  
+  .breadcrumb-trail {
+    justify-content: center;
+  }
+}
+
+/* Responsive Design - Desktop */
+@media (min-width: 1024px) {
+  .app-main {
+    padding: var(--space-8);
+  }
+  
+  .welcome-screen {
+    padding: var(--space-12);
+  }
+  
+  .footer-controls {
+    padding: 0 var(--space-8);
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --neutral-200: #000000;
+    --neutral-600: #000000;
+    --primary-blue: #0000ff;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .loading-spinner {
+    animation: none;
+    border: 4px solid var(--primary-blue);
+  }
+}

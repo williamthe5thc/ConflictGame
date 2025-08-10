@@ -1,0 +1,43 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="180" fill="#fef3c7" stroke="#f59e0b" stroke-width="8"/>
+  
+  <!-- Professional blazer -->
+  <path d="M80 320 Q80 280 120 280 L280 280 Q320 280 320 320 L320 400 L80 400 Z" fill="#dc2626"/>
+  <path d="M120 280 Q140 270 160 270 L240 270 Q260 270 280 280 L280 320 L120 320 Z" fill="#ffffff"/>
+  
+  <!-- Face -->
+  <circle cx="200" cy="180" r="80" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
+  
+  <!-- Hair - professional, confident style -->
+  <path d="M120 140 Q200 90 280 140 Q285 150 275 160 Q250 150 225 155 Q200 160 175 155 Q150 150 125 160 Q115 150 120 140" fill="#7c2d12"/>
+  
+  <!-- Eyes - determined -->
+  <ellipse cx="175" cy="170" rx="12" ry="8" fill="#ffffff"/>
+  <ellipse cx="225" cy="170" rx="12" ry="8" fill="#ffffff"/>
+  <circle cx="175" cy="170" r="6" fill="#0c4a6e"/>
+  <circle cx="225" cy="170" r="6" fill="#0c4a6e"/>
+  <circle cx="177" cy="168" r="2" fill="#ffffff"/>
+  <circle cx="227" cy="168" r="2" fill="#ffffff"/>
+  
+  <!-- Eyebrows - strong, focused -->
+  <path d="M165 155 Q175 148 185 155" stroke="#7c2d12" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M215 155 Q225 148 235 155" stroke="#7c2d12" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Nose -->
+  <path d="M200 180 L195 195 Q200 200 205 195 Z" fill="#ea580c"/>
+  
+  <!-- Mouth - confident, slight smile -->
+  <path d="M185 210 Q200 218 215 210" stroke="#374151" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Professional earrings -->
+  <circle cx="145" cy="185" r="4" fill="#fbbf24"/>
+  <circle cx="255" cy="185" r="4" fill="#fbbf24"/>
+  
+  <!-- Name label -->
+  <rect x="50" y="350" width="120" height="30" rx="15" fill="#dc2626"/>
+  <text x="110" y="370" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Maria</text>
+  
+  <!-- Role indicator -->
+  <text x="200" y="390" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Marketing Manager</text>
+</svg>

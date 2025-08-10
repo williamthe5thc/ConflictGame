@@ -169,12 +169,15 @@ class UIManager {
       
       await this.gameEngine.loadScenario(scenarioId);
       
+      // Ensure loading is hidden before showing scenario
+      this.hideLoading();
       this.hideWelcomeScreen();
       this.showScenarioDisplay();
       this.renderCurrentNode();
       
     } catch (error) {
       console.error('Error starting scenario:', error);
+      this.hideLoading();
       this.showError('Failed to load scenario. Please try again.');
     }
   }
@@ -625,12 +628,9 @@ class UIManager {
    * Show main menu
    */
   showMainMenu() {
-    // Ensure all other screens are hidden
-    this.hideScenarioDisplay();
-    this.hideLoading();
-    this.elements.errorScreen?.classList.add('hidden');
+    console.log('UI Manager: Showing main menu');
     
-    // Show welcome screen and load scenarios
+    // Use centralized screen management
     this.showWelcomeScreen();
     this.renderScenarioList();
   }
@@ -642,11 +642,18 @@ class UIManager {
    * Show welcome screen
    */
   showWelcomeScreen() {
-    console.log('Showing welcome screen');
-    this.hideLoading();
-    this.hideScenarioDisplay();
-    this.elements.errorScreen?.classList.add('hidden');
-    this.elements.welcomeScreen?.classList.remove('hidden');
+    console.log('UI Manager: Showing welcome screen');
+    
+    // Force hide all other screens first
+    this.hideAllScreens();
+    
+    // Then show welcome screen
+    if (this.elements.welcomeScreen) {
+      this.elements.welcomeScreen.classList.remove('hidden');
+      console.log('UI Manager: Welcome screen is now visible');
+    } else {
+      console.error('UI Manager: Welcome screen element not found!');
+    }
   }
 
   hideWelcomeScreen() {
@@ -654,6 +661,8 @@ class UIManager {
   }
 
   showScenarioDisplay() {
+    console.log('UI Manager: Showing scenario display');
+    this.hideAllScreens();
     this.elements.scenarioDisplay?.classList.remove('hidden');
   }
 
@@ -662,24 +671,34 @@ class UIManager {
   }
 
   showLoading() {
+    console.log('UI Manager: Showing loading screen');
+    this.hideAllScreens();
     this.elements.loadingScreen?.classList.remove('hidden');
-    this.hideWelcomeScreen();
-    this.hideScenarioDisplay();
-    this.elements.errorScreen?.classList.add('hidden');
   }
 
   hideLoading() {
+    console.log('UI Manager: Hiding loading screen');
     this.elements.loadingScreen?.classList.add('hidden');
   }
 
+  /**
+   * Hide all screens - central screen management
+   */
+  hideAllScreens() {
+    console.log('UI Manager: Hiding all screens');
+    this.elements.welcomeScreen?.classList.add('hidden');
+    this.elements.scenarioDisplay?.classList.add('hidden');
+    this.elements.loadingScreen?.classList.add('hidden');
+    this.elements.errorScreen?.classList.add('hidden');
+  }
+
   showError(message) {
+    console.log('UI Manager: Showing error screen');
     if (this.elements.errorMessage) {
       this.elements.errorMessage.textContent = message;
     }
+    this.hideAllScreens();
     this.elements.errorScreen?.classList.remove('hidden');
-    this.hideLoading();
-    this.hideWelcomeScreen();
-    this.hideScenarioDisplay();
   }
 
   /**

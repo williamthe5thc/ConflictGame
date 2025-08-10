@@ -129,39 +129,50 @@ class ConflictTrainingApp {
    * Show welcome screen
    */
   showWelcomeScreen() {
+    console.log('App: Showing welcome screen');
     this.hideLoading();
-    this.uiManager.showWelcomeScreen();
-    this.uiManager.renderScenarioList();
-  }
-
-  /**
-   * Hide loading screen
-   */
-  hideLoading() {
-    const loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) {
-      loadingScreen.classList.add('hidden');
-      console.log('Hidden loading screen');
-    }
+    
+    // Give UI Manager a moment to initialize if needed
+    setTimeout(() => {
+      if (this.uiManager) {
+        this.uiManager.showWelcomeScreen();
+        this.uiManager.renderScenarioList();
+      }
+    }, 50);
   }
 
   /**
    * Show initial loading screen
    */
   showInitialLoading() {
+    console.log('App: Showing initial loading');
     const welcomeScreen = document.getElementById('welcome-screen');
     const loadingScreen = document.getElementById('loading-screen');
+    const scenarioDisplay = document.getElementById('scenario-display');
+    const errorScreen = document.getElementById('error-screen');
     
+    // Hide all other screens
     if (welcomeScreen) welcomeScreen.classList.add('hidden');
-    if (loadingScreen) loadingScreen.classList.remove('hidden');
+    if (scenarioDisplay) scenarioDisplay.classList.add('hidden');
+    if (errorScreen) errorScreen.classList.add('hidden');
+    
+    // Show loading screen
+    if (loadingScreen) {
+      loadingScreen.classList.remove('hidden');
+      console.log('App: Loading screen now visible');
+    }
   }
 
   /**
    * Hide loading screen
    */
   hideLoading() {
+    console.log('App: Hiding loading screen');
     const loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) loadingScreen.classList.add('hidden');
+    if (loadingScreen) {
+      loadingScreen.classList.add('hidden');
+      console.log('App: Loading screen hidden successfully');
+    }
   }
 
   /**

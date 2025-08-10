@@ -625,7 +625,12 @@ class UIManager {
    * Show main menu
    */
   showMainMenu() {
+    // Ensure all other screens are hidden
     this.hideScenarioDisplay();
+    this.hideLoading();
+    this.elements.errorScreen?.classList.add('hidden');
+    
+    // Show welcome screen and load scenarios
     this.showWelcomeScreen();
     this.renderScenarioList();
   }
@@ -633,7 +638,14 @@ class UIManager {
   /**
    * Show/hide different screens
    */
+  /**
+   * Show welcome screen
+   */
   showWelcomeScreen() {
+    console.log('Showing welcome screen');
+    this.hideLoading();
+    this.hideScenarioDisplay();
+    this.elements.errorScreen?.classList.add('hidden');
     this.elements.welcomeScreen?.classList.remove('hidden');
   }
 

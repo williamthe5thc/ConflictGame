@@ -54,6 +54,7 @@ class ConflictTrainingApp {
         await this.handleSavedProgress(savedProgress);
       } else {
         console.log('✨ Starting fresh - showing welcome screen');
+        this.hideLoading();
         this.showWelcomeScreen();
       }
       
@@ -131,6 +132,17 @@ class ConflictTrainingApp {
     this.hideLoading();
     this.uiManager.showWelcomeScreen();
     this.uiManager.renderScenarioList();
+  }
+
+  /**
+   * Hide loading screen
+   */
+  hideLoading() {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+      loadingScreen.classList.add('hidden');
+      console.log('Hidden loading screen');
+    }
   }
 
   /**

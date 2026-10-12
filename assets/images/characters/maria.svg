@@ -1,43 +1,19 @@
-<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle -->
-  <circle cx="200" cy="200" r="180" fill="#fef3c7" stroke="#f59e0b" stroke-width="8"/>
-  
-  <!-- Professional blazer -->
-  <path d="M80 320 Q80 280 120 280 L280 280 Q320 280 320 320 L320 400 L80 400 Z" fill="#dc2626"/>
-  <path d="M120 280 Q140 270 160 270 L240 270 Q260 270 280 280 L280 320 L120 320 Z" fill="#ffffff"/>
-  
-  <!-- Face -->
-  <circle cx="200" cy="180" r="80" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/>
-  
-  <!-- Hair - professional, confident style -->
-  <path d="M120 140 Q200 90 280 140 Q285 150 275 160 Q250 150 225 155 Q200 160 175 155 Q150 150 125 160 Q115 150 120 140" fill="#7c2d12"/>
-  
-  <!-- Eyes - determined -->
-  <ellipse cx="175" cy="170" rx="12" ry="8" fill="#ffffff"/>
-  <ellipse cx="225" cy="170" rx="12" ry="8" fill="#ffffff"/>
-  <circle cx="175" cy="170" r="6" fill="#0c4a6e"/>
-  <circle cx="225" cy="170" r="6" fill="#0c4a6e"/>
-  <circle cx="177" cy="168" r="2" fill="#ffffff"/>
-  <circle cx="227" cy="168" r="2" fill="#ffffff"/>
-  
-  <!-- Eyebrows - strong, focused -->
-  <path d="M165 155 Q175 148 185 155" stroke="#7c2d12" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M215 155 Q225 148 235 155" stroke="#7c2d12" stroke-width="4" fill="none" stroke-linecap="round"/>
-  
-  <!-- Nose -->
-  <path d="M200 180 L195 195 Q200 200 205 195 Z" fill="#ea580c"/>
-  
-  <!-- Mouth - confident, slight smile -->
-  <path d="M185 210 Q200 218 215 210" stroke="#374151" stroke-width="3" fill="none" stroke-linecap="round"/>
-  
-  <!-- Professional earrings -->
-  <circle cx="145" cy="185" r="4" fill="#fbbf24"/>
-  <circle cx="255" cy="185" r="4" fill="#fbbf24"/>
-  
-  <!-- Name label -->
-  <rect x="50" y="350" width="120" height="30" rx="15" fill="#dc2626"/>
-  <text x="110" y="370" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Maria</text>
-  
-  <!-- Role indicator -->
-  <text x="200" y="390" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Marketing Manager</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img">
+  <circle cx="100" cy="100" r="96" fill="#FDECEC" stroke="#DC2626" stroke-width="6"/>
+  <clipPath id="c"><circle cx="100" cy="100" r="93"/></clipPath>
+  <g clip-path="url(#c)">
+    <path d="M60 96 C56 54 84 40 100 40 C118 40 146 54 140 96 L144 150 L56 150 Z" fill="#2A1A12"/>
+    <path d="M40 200 C42 160 64 146 100 146 C136 146 158 160 160 200 Z" fill="#B91C1C"/><path d="M84 148 L100 166 L116 148 Z" fill="#F8D7D7"/>
+    <rect x="89" y="124" width="22" height="26" rx="6" fill="#87532F"/>
+    <ellipse cx="64" cy="98" rx="7" ry="10" fill="#87532F"/>
+    <ellipse cx="136" cy="98" rx="7" ry="10" fill="#87532F"/>
+    <ellipse cx="100" cy="94" rx="36" ry="42" fill="#A0663F"/>
+    <path d="M64 92 C62 56 88 44 100 44 C116 44 138 56 136 92 C126 72 112 64 98 64 C86 64 72 74 64 92 Z" fill="#2A1A12"/>
+    <path d="M78 84 Q86 80 94 84 M106 84 Q114 80 122 84" stroke="#3A2A20" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="86" cy="97" r="3.6" fill="#2B2B2B"/>
+    <circle cx="114" cy="97" r="3.6" fill="#2B2B2B"/>
+    
+    <path d="M97 104 Q100 112 103 104" stroke="#87532F" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M88 118 Q100 126 112 118" stroke="#8A3B2E" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  </g>
 </svg>

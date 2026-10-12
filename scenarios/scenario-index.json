@@ -17,7 +17,7 @@
       "category": "workload",
       "difficulty": "intermediate",
       "estimatedTime": "8-12 minutes",
-      "unlocked": true,
+      "unlocked": false,
       "file": "scenarios/scenario-002.json"
     },
     {
@@ -27,7 +27,7 @@
       "category": "performance",
       "difficulty": "advanced",
       "estimatedTime": "10-15 minutes",
-      "unlocked": true,
+      "unlocked": false,
       "file": "scenarios/scenario-003.json"
     }
   ],

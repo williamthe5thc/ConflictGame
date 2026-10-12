@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img">
+  <circle cx="100" cy="100" r="96" fill="#EEF2F7" stroke="#475569" stroke-width="6"/>
+  <clipPath id="c"><circle cx="100" cy="100" r="93"/></clipPath>
+  <g clip-path="url(#c)">
+    <path d="M28 200 C30 168 42 158 58 158 C74 158 86 168 88 200 Z" fill="#0F766E"/><circle cx="58" cy="128" r="24" fill="#6E4429"/><path d="M34 124 C34 104 48 98 58 98 C70 98 84 106 82 124 C74 112 44 112 34 124 Z" fill="#1B1310"/><circle cx="50" cy="130" r="2.6" fill="#2B2B2B"/><circle cx="66" cy="130" r="2.6" fill="#2B2B2B"/><path d="M51 140 Q58 144 65 140" stroke="#8A3B2E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M112 200 C114 168 126 158 142 158 C158 158 170 168 172 200 Z" fill="#B91C1C"/><circle cx="142" cy="128" r="24" fill="#F6D3B8"/><path d="M118 124 C118 104 132 98 142 98 C154 98 168 106 166 124 C158 112 128 112 118 124 Z" fill="#B7791F"/><circle cx="134" cy="130" r="2.6" fill="#2B2B2B"/><circle cx="150" cy="130" r="2.6" fill="#2B2B2B"/><path d="M135 140 Q142 144 149 140" stroke="#8A3B2E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M70 200 C72 168 84 158 100 158 C116 158 128 168 130 200 Z" fill="#1D4ED8"/><circle cx="100" cy="128" r="24" fill="#C98E62"/><path d="M76 124 C76 104 90 98 100 98 C112 98 126 106 124 124 C116 112 86 112 76 124 Z" fill="#2A1A12"/><circle cx="92" cy="130" r="2.6" fill="#2B2B2B"/><circle cx="108" cy="130" r="2.6" fill="#2B2B2B"/><path d="M93 140 Q100 144 107 140" stroke="#8A3B2E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

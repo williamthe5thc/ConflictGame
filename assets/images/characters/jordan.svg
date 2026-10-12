@@ -1,43 +1,19 @@
-<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle -->
-  <circle cx="200" cy="200" r="180" fill="#f0fdf4" stroke="#16a34a" stroke-width="8"/>
-  
-  <!-- Professional cardigan/sweater -->
-  <path d="M80 320 Q80 280 120 280 L280 280 Q320 280 320 320 L320 400 L80 400 Z" fill="#7c3aed"/>
-  <path d="M120 280 Q140 270 160 270 L240 270 Q260 270 280 280 L280 320 L120 320 Z" fill="#ffffff"/>
-  
-  <!-- Face -->
-  <circle cx="200" cy="180" r="80" fill="#fdba74" stroke="#ea580c" stroke-width="2"/>
-  
-  <!-- Hair - longer, friendly -->
-  <path d="M120 140 Q180 110 200 120 Q220 110 280 140 Q285 160 270 170 Q250 160 230 165 Q200 170 170 165 Q150 160 130 170 Q115 160 120 140" fill="#92400e"/>
-  
-  <!-- Eyes - warm and expressive -->
-  <ellipse cx="175" cy="170" rx="12" ry="8" fill="#ffffff"/>
-  <ellipse cx="225" cy="170" rx="12" ry="8" fill="#ffffff"/>
-  <circle cx="175" cy="170" r="6" fill="#059669"/>
-  <circle cx="225" cy="170" r="6" fill="#059669"/>
-  <circle cx="177" cy="168" r="2" fill="#ffffff"/>
-  <circle cx="227" cy="168" r="2" fill="#ffffff"/>
-  
-  <!-- Eyebrows - gentle expression -->
-  <path d="M165 155 Q175 152 185 155" stroke="#92400e" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M215 155 Q225 152 235 155" stroke="#92400e" stroke-width="3" fill="none" stroke-linecap="round"/>
-  
-  <!-- Nose -->
-  <path d="M200 180 L195 195 Q200 200 205 195 Z" fill="#ea580c"/>
-  
-  <!-- Mouth - gentle smile -->
-  <path d="M185 210 Q200 220 215 210" stroke="#374151" stroke-width="3" fill="none" stroke-linecap="round"/>
-  
-  <!-- Earrings - small detail -->
-  <circle cx="145" cy="185" r="3" fill="#fbbf24"/>
-  <circle cx="255" cy="185" r="3" fill="#fbbf24"/>
-  
-  <!-- Name label -->
-  <rect x="250" y="350" width="100" height="30" rx="15" fill="#16a34a"/>
-  <text x="300" y="370" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Jordan</text>
-  
-  <!-- Role indicator -->
-  <text x="200" y="390" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="12">Project Coordinator</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img">
+  <circle cx="100" cy="100" r="96" fill="#E5F6EC" stroke="#16A34A" stroke-width="6"/>
+  <clipPath id="c"><circle cx="100" cy="100" r="93"/></clipPath>
+  <g clip-path="url(#c)">
+    
+    <path d="M40 200 C42 160 64 146 100 146 C136 146 158 160 160 200 Z" fill="#2F855A"/><path d="M84 148 L100 166 L116 148 Z" fill="#D7F0E1"/>
+    <rect x="89" y="124" width="22" height="26" rx="6" fill="#E3B394"/>
+    <ellipse cx="64" cy="98" rx="7" ry="10" fill="#E3B394"/>
+    <ellipse cx="136" cy="98" rx="7" ry="10" fill="#E3B394"/>
+    <ellipse cx="100" cy="94" rx="36" ry="42" fill="#F6D3B8"/>
+    <path d="M63 94 C58 56 88 42 104 43 C126 44 142 60 137 94 C134 78 128 70 118 66 C104 72 84 70 72 74 C67 80 65 86 63 94 Z" fill="#7A4A2A"/>
+    <path d="M78 84 Q86 80 94 84 M106 84 Q114 80 122 84" stroke="#3A2A20" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="86" cy="97" r="3.6" fill="#2B2B2B"/>
+    <circle cx="114" cy="97" r="3.6" fill="#2B2B2B"/>
+    
+    <path d="M97 104 Q100 112 103 104" stroke="#E3B394" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M88 118 Q100 126 112 118" stroke="#8A3B2E" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  </g>
 </svg>

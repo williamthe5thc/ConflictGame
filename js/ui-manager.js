@@ -119,11 +119,13 @@ class UIManager {
   renderScenarioList() {
     if (!this.elements.scenarioList) return;
     
-    const scenarios = this.gameEngine.getAvailableScenarios();
+    // List every scenario; the ones not yet available show as "Coming soon".
+    const available = new Set(this.gameEngine.getAvailableScenarios().map((s) => s.id));
+    const scenarios = this.gameEngine.scenarioIndex?.scenarios || [];
     this.elements.scenarioList.innerHTML = '';
     
     scenarios.forEach(scenario => {
-      const card = this.createScenarioCard(scenario);
+      const card = this.createScenarioCard(scenario, !available.has(scenario.id));
       this.elements.scenarioList.appendChild(card);
     });
     
@@ -136,12 +138,17 @@ class UIManager {
   /**
    * Create a scenario selection card
    */
-  createScenarioCard(scenario) {
+  createScenarioCard(scenario, comingSoon = false) {
     const card = document.createElement('button');
     card.className = 'scenario-card';
     card.setAttribute('data-scenario-id', scenario.id);
     
     const isCompleted = this.storage.isScenarioCompleted(scenario.id);
+    // A scenario still being written is listed, but can't be started.
+    if (comingSoon) {
+      card.disabled = true;
+      card.classList.add('coming-soon');
+    }
     
     card.innerHTML = `
       <h3>${scenario.title} ${isCompleted ? '✓' : ''}</h3>
@@ -150,12 +157,15 @@ class UIManager {
         <span class="difficulty-badge ${scenario.difficulty}">${scenario.difficulty}</span>
         <span class="estimated-time">${scenario.estimatedTime || '5-10 min'}</span>
         ${isCompleted ? '<span class="completion-status">Completed</span>' : ''}
+        ${comingSoon ? '<span class="coming-soon-badge">Coming soon</span>' : ''}
       </div>
     `;
     
-    card.addEventListener('click', () => {
-      this.startScenario(scenario.id);
-    });
+    if (!comingSoon) {
+      card.addEventListener('click', () => {
+        this.startScenario(scenario.id);
+      });
+    }
     
     return card;
   }
@@ -263,7 +273,36 @@ class UIManager {
     }
     
     container.appendChild(sceneBackground);
-    
+
+    // The people in this scenario. Every line is narrated, so without this
+    // the learner reads about Alex and Jordan but never sees who they are.
+    const cast = Object.values(scenario?.characters || {}).filter((c) => c.portrait);
+    if (cast.length) {
+      const castStrip = document.createElement('ul');
+      castStrip.className = 'cast-strip';
+      castStrip.setAttribute('aria-label', 'People in this scenario');
+      cast.forEach((character) => {
+        const item = document.createElement('li');
+        item.className = 'cast-member';
+        const img = document.createElement('img');
+        img.src = character.portrait;
+        img.alt = '';
+        img.width = 64;
+        img.height = 64;
+        const text = document.createElement('div');
+        const name = document.createElement('span');
+        name.className = 'cast-name';
+        name.textContent = character.name;
+        const role = document.createElement('span');
+        role.className = 'cast-role';
+        role.textContent = character.role || '';
+        text.append(name, role);
+        item.append(img, text);
+        castStrip.appendChild(item);
+      });
+      container.appendChild(castStrip);
+    }
+
     // Character area (if speaker is not narrator)
     if (content.speaker && content.speaker !== 'narrator') {
       const characterArea = document.createElement('div');

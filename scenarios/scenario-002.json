@@ -527,6 +527,421 @@
           "reflection": "How can resource constraints drive innovation in project management and delivery approaches?"
         }
       ]
+    },
+    "scope_negotiation": {
+      "type": "outcome",
+      "content": {
+        "title": "Trimming Both Projects",
+        "text": "You ask Maria and David to each list what truly has to ship by Friday. Maria cuts the animated banners and keeps the core campaign visuals. David drops the secondary screens and keeps the main feature flow. Sam looks over both lists: 'This is a lot closer. It's still more than I can do well in two and a half days, but it's no longer impossible.'",
+        "speaker": "narrator",
+        "emotion": "negotiating"
+      },
+      "feedback": {
+        "strategy": "compromising",
+        "effectiveness": "medium",
+        "explanation": "Asking both sides to give something up makes the problem smaller and keeps either project from losing outright. The risk is that cuts made under pressure trim what is easy to give up rather than what matters least, and neither side is fully satisfied.",
+        "skillsUsed": [
+          "negotiation",
+          "scope management",
+          "prioritization"
+        ],
+        "consequences": "Both projects shrink, but the plan still depends on Sam stretching to cover the gap"
+      },
+      "choices": [
+        {
+          "id": "phase_trimmed_scope",
+          "text": "Turn the trimmed lists into a phased plan: core versions by Friday, the rest next week",
+          "strategy": "collaborating",
+          "nextNode": "minimum_viable_approach"
+        },
+        {
+          "id": "stock_for_campaign_extras",
+          "text": "Ask Maria whether stock visuals could cover the campaign pieces that are left",
+          "strategy": "compromising",
+          "nextNode": "stock_solution"
+        }
+      ]
+    },
+    "sequential_delivery": {
+      "type": "outcome",
+      "content": {
+        "title": "Which One Goes First?",
+        "text": "You suggest Sam finish one project completely before starting the other. Sam looks relieved at the idea of focusing on one thing. Then the obvious question lands. Maria says: 'Then the campaign goes first - the launch date isn't ours to move.' David answers: 'And the feature was promised to customers. Whoever goes second misses Friday.' Your idea has turned the disagreement into a contest for first place.",
+        "speaker": "narrator",
+        "emotion": "tense"
+      },
+      "feedback": {
+        "strategy": "competing",
+        "effectiveness": "medium",
+        "explanation": "Sequencing respects how focused design work gets done, but deciding the order is a win-lose call. Choosing for others without criteria they accept tends to leave the second team feeling overruled, even when the decision is reasonable.",
+        "skillsUsed": [
+          "decisive proposal",
+          "workflow awareness"
+        ],
+        "consequences": "Sam gains focus, but Maria and David are now competing for the first slot"
+      },
+      "choices": [
+        {
+          "id": "order_by_impact",
+          "text": "Let the business impact decide the order, and ask Maria and David to make their cases",
+          "strategy": "collaborating",
+          "nextNode": "impact_assessment"
+        },
+        {
+          "id": "ask_sam_sequence",
+          "text": "Ask Sam how the work could be split into focused blocks for each project",
+          "strategy": "active_listening",
+          "nextNode": "designer_perspective"
+        },
+        {
+          "id": "campaign_first",
+          "text": "Decide the order yourself: the campaign goes first because its date is fixed",
+          "strategy": "competing",
+          "nextNode": "revenue_focus"
+        }
+      ]
+    },
+    "revenue_focus": {
+      "type": "resolution",
+      "content": {
+        "title": "Campaign First",
+        "text": "You decide that Sam's time goes to the campaign until it ships. Maria's team gets strong, focused visuals, and the campaign launches on schedule. David's mockups slip by a week. David accepts the call but tells you afterward: 'I understand the reasoning. I just wish I'd been part of the decision instead of hearing it.' His developers spend the delay on smaller tasks while they wait.",
+        "speaker": "narrator",
+        "emotion": "resigned"
+      },
+      "feedback": {
+        "strategy": "competing",
+        "effectiveness": "medium",
+        "explanation": "Making a firm call ends the standoff quickly, and sometimes a clear decision is what a deadline needs. The cost is that one side loses outright and feels decided upon. Competing can be the right move when time is short, but it spends trust that collaboration would have built.",
+        "skillsUsed": [
+          "decisive prioritization",
+          "deadline management"
+        ],
+        "consequences": "The campaign succeeds, the feature is delayed, and David feels left out of the decision"
+      },
+      "endings": [
+        {
+          "type": "mixed",
+          "title": "Clear Call, Uneven Cost",
+          "description": "The campaign launches well, but the product team carries the full cost of the decision and is warier the next time resources are tight.",
+          "reflection": "When is a quick, firm decision worth the cost to the side that loses? How could you have made the call with David rather than for him?"
+        }
+      ]
+    },
+    "retention_focus": {
+      "type": "resolution",
+      "content": {
+        "title": "Feature First",
+        "text": "You argue that the feature should come first because it addresses customer complaints. Sam spends the week on David's mockups, and the developers get exactly what they need. Maria's team assembles the campaign with quick visuals that Sam reviews for an hour on Thursday night. The campaign launches, but Maria is frustrated: 'You were supposed to be coordinating, not picking a side.'",
+        "speaker": "narrator",
+        "emotion": "strained"
+      },
+      "feedback": {
+        "strategy": "competing",
+        "effectiveness": "medium",
+        "explanation": "Advocating for one priority settles the question, and the long-term reasoning may be sound. But when the person coordinating takes a side, the other party stops seeing them as neutral. Competing gets a decision; it rarely gets agreement.",
+        "skillsUsed": [
+          "advocacy",
+          "long-term thinking"
+        ],
+        "consequences": "The feature is well supported, the campaign ships with weaker visuals, and Maria loses trust in you as a neutral coordinator"
+      },
+      "endings": [
+        {
+          "type": "mixed",
+          "title": "Won the Argument, Lost the Room",
+          "description": "The product work goes well, but the marketing team now sees you as an advocate for the product side.",
+          "reflection": "How does taking a side change your ability to coordinate between two groups afterward?"
+        }
+      ]
+    },
+    "alternative_exploration": {
+      "type": "outcome",
+      "content": {
+        "title": "Back to the Drawing Board",
+        "text": "You say it plainly: 'You're right, splitting Sam down the middle doesn't work for design. Let's look at this differently.' The tension eases. Sam mentions a freelancer who could handle early wireframes. Maria wonders aloud whether stock visuals could carry part of the campaign. David asks whether each project could ship a simpler first version. The conversation has moved from dividing Sam to finding more options.",
+        "speaker": "narrator",
+        "emotion": "relieved"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "high",
+        "explanation": "Admitting that your first idea didn't fit, and inviting others to look for options, rebuilds trust and widens the set of solutions. The trade-off is time: brainstorming takes part of a week that was already short.",
+        "skillsUsed": [
+          "course correction",
+          "option generation",
+          "openness to feedback"
+        ],
+        "consequences": "Several workable options appear, at the cost of some of the time left before Friday"
+      },
+      "choices": [
+        {
+          "id": "pursue_freelancer",
+          "text": "Look into bringing in outside help so there is more design capacity",
+          "strategy": "collaborating",
+          "nextNode": "external_resources"
+        },
+        {
+          "id": "pursue_stock",
+          "text": "Explore Maria's stock visual idea for the campaign",
+          "strategy": "compromising",
+          "nextNode": "stock_solution"
+        },
+        {
+          "id": "pursue_simpler_versions",
+          "text": "Ask both teams what a simpler first version of their project would include",
+          "strategy": "collaborating",
+          "nextNode": "minimum_viable_approach"
+        }
+      ]
+    },
+    "boundary_setting": {
+      "type": "resolution",
+      "content": {
+        "title": "Protected Focus Time",
+        "text": "You help everyone agree on ground rules: each team gets one short check-in with Sam per day, other questions go to you to batch, and no new requests during the other team's block. Neither Maria nor David gets as much access to Sam as they wanted. Midweek, someone on Maria's team tries to slip in a late change; you hold the line and log it for next week. Sam delivers both projects, and both managers grudgingly admit the rules helped.",
+        "speaker": "narrator",
+        "emotion": "steady"
+      },
+      "feedback": {
+        "strategy": "compromising",
+        "effectiveness": "high",
+        "explanation": "Clear boundaries protect focus by asking each side to give up some access. That is a real concession, and holding the rules takes effort when someone pushes back. Compromise works well here because each team keeps what it needs most.",
+        "skillsUsed": [
+          "boundary setting",
+          "process design",
+          "holding agreements"
+        ],
+        "consequences": "Both projects are delivered, with some friction over the limits on access"
+      },
+      "endings": [
+        {
+          "type": "success",
+          "title": "Rules That Held",
+          "description": "The check-in rules become a habit, though each team still occasionally tests them under pressure.",
+          "reflection": "What makes a compromise hold up when one side is tempted to break it?"
+        }
+      ]
+    },
+    "timeline_flexibility": {
+      "type": "outcome",
+      "content": {
+        "title": "Asking David to Wait",
+        "text": "You ask David whether the feature could move by a week. He thinks it over: 'Technically, yes. But the support team keeps fielding complaints in the meantime, and I'm the one who explains the slip to leadership.' He agrees to consider it, but you can tell he feels his project is the one being asked to give way.",
+        "speaker": "narrator",
+        "emotion": "hesitant"
+      },
+      "feedback": {
+        "strategy": "accommodating",
+        "effectiveness": "medium",
+        "explanation": "Accommodating makes sense when an issue matters more to one side than the other, and the campaign's date is harder to move. But the cost falls entirely on the person who yields. If that cost isn't acknowledged and shared, accommodation tends to turn into quiet resentment.",
+        "skillsUsed": [
+          "flexibility",
+          "deadline negotiation",
+          "perspective-taking"
+        ],
+        "consequences": "A delay is possible, but David carries its cost and needs support to accept it"
+      },
+      "choices": [
+        {
+          "id": "share_delay_cost",
+          "text": "Make the delay a joint decision: help David explain it and guarantee Sam's time next week",
+          "strategy": "collaborating",
+          "nextNode": "supported_delay"
+        },
+        {
+          "id": "shrink_delay",
+          "text": "Ask whether basic mockups by Friday could make the delay shorter",
+          "strategy": "collaborating",
+          "nextNode": "minimum_viable_approach"
+        }
+      ]
+    },
+    "supported_delay": {
+      "type": "resolution",
+      "content": {
+        "title": "A Delay Everyone Owns",
+        "text": "You and David agree on the message for leadership together, and Maria joins the update to explain why the campaign date couldn't move. You put Sam's first three days next week on David's calendar in writing. The campaign launches with Sam's full attention, and the feature ships a week late but complete. David says afterward: 'Waiting was easier because I wasn't the only one standing behind it.'",
+        "speaker": "narrator",
+        "emotion": "settled"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "high",
+        "explanation": "Turning one person's concession into a shared decision keeps the delay from feeling like a loss imposed on one side. It took extra time to align the message and secure next week's schedule, and the customer issue still waited a week, but trust held on both teams.",
+        "skillsUsed": [
+          "shared accountability",
+          "stakeholder communication",
+          "commitment follow-through"
+        ],
+        "consequences": "Both projects are completed, one a week later, with the relationship intact"
+      },
+      "endings": [
+        {
+          "type": "success",
+          "title": "Shared Sacrifice",
+          "description": "The teams learn that a delay costs less when everyone explains it together instead of leaving one person to defend it.",
+          "reflection": "When someone gives way for the good of the group, what can you do so the cost doesn't fall only on them?"
+        }
+      ]
+    },
+    "team_capability": {
+      "type": "outcome",
+      "content": {
+        "title": "Looking Around the Team",
+        "text": "You ask who else could take on simpler design tasks. A junior designer has time for resizing assets and building icon variants, and a marketing coordinator can produce the social media crops from Sam's master files. Sam is cautious: 'That helps, but I'd need to brief them and review everything, which costs me a few hours.'",
+        "speaker": "narrator",
+        "emotion": "thoughtful"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "high",
+        "explanation": "Spreading work across the team adds capacity and gives others a chance to grow. Collaboration has overhead, though: Sam has to brief and review the work, and the quality of the simple pieces depends on people with less experience.",
+        "skillsUsed": [
+          "resource mapping",
+          "delegation",
+          "capability building"
+        ],
+        "consequences": "More hands are available, but Sam's time now includes briefing and review"
+      },
+      "choices": [
+        {
+          "id": "brief_and_review",
+          "text": "Have Sam brief the helpers and review their work, while keeping the brand-critical pieces",
+          "strategy": "collaborating",
+          "nextNode": "shared_workload"
+        },
+        {
+          "id": "add_outside_help",
+          "text": "Combine the team's help with outside freelance support",
+          "strategy": "collaborating",
+          "nextNode": "external_resources"
+        }
+      ]
+    },
+    "shared_workload": {
+      "type": "resolution",
+      "content": {
+        "title": "Many Hands",
+        "text": "Sam spends Wednesday afternoon briefing the helpers, then focuses on the key campaign visuals and the main feature screens. The junior designer's icon set needs one round of fixes, and the social crops go out a few hours late. Both projects are delivered by Friday. The junior designer asks to stay involved in future campaigns.",
+        "speaker": "narrator",
+        "emotion": "busy"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "high",
+        "explanation": "Sharing the work met both deadlines and built skills on the team. It wasn't free: Sam lost hours to briefing and review, and some pieces needed rework. Collaborative solutions often trade some speed now for more capacity later.",
+        "skillsUsed": [
+          "delegation",
+          "mentoring",
+          "workload distribution"
+        ],
+        "consequences": "Both deadlines are met with a little rework, and the team has more design capacity going forward"
+      },
+      "endings": [
+        {
+          "type": "success",
+          "title": "Capacity Built",
+          "description": "The team no longer depends on Sam alone for simpler design work, which eases the next crunch.",
+          "reflection": "How can a resource crunch become a chance to build skills across a team?"
+        }
+      ]
+    },
+    "deadline_pressure": {
+      "type": "outcome",
+      "content": {
+        "title": "Racing the Clock",
+        "text": "You propose a deal: the team gets one hour to find a solution before anyone goes to management. The deadline focuses people, but it also rushes them. Within minutes, Maria and David are trading offers. David suggests: 'Just give us half of Sam's time and we'll make it work.' Sam stays quiet, and no one has asked what the work actually requires.",
+        "speaker": "narrator",
+        "emotion": "pressured"
+      },
+      "feedback": {
+        "strategy": "compromising",
+        "effectiveness": "medium",
+        "explanation": "A time limit creates urgency and keeps escalation available as a fallback, which can break a stalemate. But time pressure pushes people toward quick trades rather than understanding, and the person most affected - Sam - can get skipped.",
+        "skillsUsed": [
+          "time-boxing",
+          "negotiation",
+          "fallback planning"
+        ],
+        "consequences": "The team is moving quickly, but toward a split that hasn't been tested against the real work"
+      },
+      "choices": [
+        {
+          "id": "use_hour_for_facts",
+          "text": "Use the hour to get the facts on both projects before anyone trades",
+          "strategy": "active_listening",
+          "nextNode": "information_gathering"
+        },
+        {
+          "id": "take_quick_split",
+          "text": "Take the quickest deal on the table and split Sam's time evenly",
+          "strategy": "compromising",
+          "nextNode": "time_split_proposal"
+        },
+        {
+          "id": "hour_runs_out",
+          "text": "Let the hour run out without agreement and take it to management",
+          "strategy": "avoiding",
+          "nextNode": "management_involvement"
+        }
+      ]
+    },
+    "coordination_role": {
+      "type": "resolution",
+      "content": {
+        "title": "Holding the Threads",
+        "text": "You take on the logistics: scheduling the feedback rounds, chasing stakeholder comments, and keeping Sam's calendar clear between reviews. The iterative plan works and both projects ship. But you spend two late evenings catching up on your own work, and by Friday both teams are routing every question through you instead of talking to each other.",
+        "speaker": "narrator",
+        "emotion": "tired"
+      },
+      "feedback": {
+        "strategy": "accommodating",
+        "effectiveness": "high",
+        "explanation": "Taking on the coordination load made the plan work, and smoothing the way for others is a real contribution. Accommodating has a cost, though: the effort lands on you, and the teams may come to rely on you rather than learning to coordinate directly.",
+        "skillsUsed": [
+          "coordination",
+          "project management",
+          "stakeholder follow-up"
+        ],
+        "consequences": "Both projects succeed, but you absorbed much of the cost and became the go-between for everything"
+      },
+      "endings": [
+        {
+          "type": "mixed",
+          "title": "Smooth Delivery, Heavy Load",
+          "description": "The plan works this time, but the teams now expect you to manage every handoff between them.",
+          "reflection": "When you take on extra work to help others succeed, how do you keep it from becoming the expected arrangement?"
+        }
+      ]
+    },
+    "external_coordination": {
+      "type": "resolution",
+      "content": {
+        "title": "Managing the Outside Help",
+        "text": "You take charge of briefing the freelancer and the agency partner so Sam can stay focused. The freelancer's wireframes come back usable. The agency's campaign concepts miss the brand in a few places, because the brief came from you rather than from Sam. Sam spends Thursday evening correcting them. Both projects ship on time, with a few rough edges in the campaign.",
+        "speaker": "narrator",
+        "emotion": "mixed"
+      },
+      "feedback": {
+        "strategy": "accommodating",
+        "effectiveness": "medium",
+        "explanation": "Taking coordination off Sam's plate freed up focus time. But brand and design direction depend on expertise you don't have, and handling it on someone else's behalf meant some of it was lost in translation. Accommodating works best when you can actually carry what you take on.",
+        "skillsUsed": [
+          "vendor coordination",
+          "briefing",
+          "support"
+        ],
+        "consequences": "Deadlines are met, but quality alignment slips and Sam still ends up fixing some of the work"
+      },
+      "endings": [
+        {
+          "type": "mixed",
+          "title": "Help with Gaps",
+          "description": "Outside help adds capacity, and the team learns that the person with the design expertise needs to set the creative direction.",
+          "reflection": "When should you take work off someone's plate, and when should you make room for them to do the part only they can do?"
+        }
+      ]
     }
   },
   "learningResources": {

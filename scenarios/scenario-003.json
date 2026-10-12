@@ -509,6 +509,459 @@
           "reflection": "What are the trade-offs between formal performance processes and relationship-based leadership approaches?"
         }
       ]
+    },
+    "empathetic_boundaries": {
+      "type": "outcome",
+      "content": {
+        "title": "Kind but Firm",
+        "text": "You tell Chris you're sorry they're dealing with so much, and that you appreciate their honesty. Then you add: 'At the same time, the team is depending on these deliverables, and I need the standards to hold.' Chris nods slowly. 'Right. So I just need to try harder.' The conversation is still warm, but Chris seems to be carrying the same weight as before.",
+        "speaker": "narrator",
+        "emotion": "subdued"
+      },
+      "feedback": {
+        "strategy": "compromising",
+        "effectiveness": "medium",
+        "explanation": "Acknowledging Chris's situation while keeping expectations clear is better than choosing only one, and it is honest about what the team needs. But without concrete support, it asks Chris to meet the same bar on their own. A middle position can leave both needs only half met.",
+        "skillsUsed": [
+          "empathy",
+          "expectation setting",
+          "honest communication"
+        ],
+        "consequences": "Chris feels heard but not helped; expectations are clear, but the path to meeting them isn't"
+      },
+      "choices": [
+        {
+          "id": "make_standard_reachable",
+          "text": "Ask what support would make the standard reachable, and build a plan together",
+          "strategy": "collaborating",
+          "nextNode": "collaborative_support_plan"
+        },
+        {
+          "id": "adjust_commitments",
+          "text": "Agree on a smaller set of firm commitments for the next two sprints",
+          "strategy": "compromising",
+          "nextNode": "balanced_approach"
+        }
+      ]
+    },
+    "team_communication": {
+      "type": "outcome",
+      "content": {
+        "title": "Whose Story to Tell",
+        "text": "You suggest that telling the team something might ease the tension. Chris tenses: 'I don't want everyone knowing my business.' You clarify that it's entirely Chris's choice, and that even 'I'm dealing with something personal' would be enough. Chris relaxes a little: 'Maybe. But I'd want to have a plan first, so it doesn't sound like I'm just asking for a pass.'",
+        "speaker": "narrator",
+        "emotion": "cautious"
+      },
+      "feedback": {
+        "strategy": "active_listening",
+        "effectiveness": "medium",
+        "explanation": "Transparency can turn team frustration into support, but this is Chris's information to share. Suggesting it too early can feel like a condition of getting help. Listening to Chris's hesitation, and making clear the choice is theirs, keeps trust intact.",
+        "skillsUsed": [
+          "respecting privacy",
+          "listening",
+          "consent"
+        ],
+        "consequences": "Chris is open to sharing something, on their own terms and once there is a plan"
+      },
+      "choices": [
+        {
+          "id": "plan_before_sharing",
+          "text": "Build a support plan together first, so Chris has something concrete to share",
+          "strategy": "collaborating",
+          "nextNode": "collaborative_support_plan"
+        },
+        {
+          "id": "respect_privacy",
+          "text": "Respect Chris's privacy and tell the team only that workloads are being adjusted",
+          "strategy": "accommodating",
+          "nextNode": "temporary_support"
+        }
+      ]
+    },
+    "close_monitoring": {
+      "type": "resolution",
+      "content": {
+        "title": "A Close Eye",
+        "text": "You add daily check-ins, review each of Chris's pull requests yourself, and quietly pick up two of Chris's tickets. Chris's output steadies. After two weeks, though, Chris says: 'I know you mean well, but the daily check-ins make me feel like I'm being watched.' Meanwhile your own work has slipped, and the team still doesn't know why their lead is so busy.",
+        "speaker": "narrator",
+        "emotion": "strained"
+      },
+      "feedback": {
+        "strategy": "accommodating",
+        "effectiveness": "medium",
+        "explanation": "Intensive support can help someone through a hard stretch, and Chris's work did improve. But heavy monitoring can read as distrust, and absorbing the extra work yourself is hard to sustain. Support works best when the person helps decide what kind they need.",
+        "skillsUsed": [
+          "hands-on support",
+          "code review",
+          "follow-through"
+        ],
+        "consequences": "Chris's work stabilizes, but Chris feels watched and your own workload suffers"
+      },
+      "endings": [
+        {
+          "type": "mixed",
+          "title": "Support That Smothers",
+          "description": "Chris gets back on track, but you learn that more oversight isn't always more support.",
+          "reflection": "How can you tell the difference between support someone finds helpful and support that feels like surveillance?"
+        }
+      ]
+    },
+    "formal_documentation": {
+      "type": "resolution",
+      "content": {
+        "title": "Putting It in Writing",
+        "text": "You write up the support plan with its milestones, share it with Leslie, and ask Chris to review and sign it. Chris reads it twice. 'Is this a performance improvement plan?' You explain that it records the support as well as the expectations. Chris signs and meets the milestones over the next two months, but the warmth of your coffee conversation doesn't quite come back.",
+        "speaker": "narrator",
+        "emotion": "formal"
+      },
+      "feedback": {
+        "strategy": "competing",
+        "effectiveness": "medium",
+        "explanation": "Documentation creates clarity and protects both Chris and the team if things go wrong later. But adding formality right after a vulnerable conversation can feel like a warning. Putting the organization's protection first is a legitimate choice, and it costs some closeness.",
+        "skillsUsed": [
+          "documentation",
+          "clear milestones",
+          "risk management"
+        ],
+        "consequences": "Expectations are clear and Chris improves, but the relationship becomes more guarded"
+      },
+      "endings": [
+        {
+          "type": "mixed",
+          "title": "Clear but Cooler",
+          "description": "The written plan works, though Chris is more careful about what they share with you afterward.",
+          "reflection": "When does putting an agreement in writing build trust, and when does it signal a lack of trust?"
+        }
+      ]
+    },
+    "delayed_listening": {
+      "type": "outcome",
+      "content": {
+        "title": "A Question, Late",
+        "text": "You pause and ask: 'What's making the work hard right now, from your side?' Chris is still guarded, but answers: 'Honestly? There's a lot going on outside work. And the last few sprints, the estimates haven't matched the actual work.' It is only part of the picture, but it's more than you had five minutes ago.",
+        "speaker": "narrator",
+        "emotion": "guarded"
+      },
+      "feedback": {
+        "strategy": "active_listening",
+        "effectiveness": "medium",
+        "explanation": "Asking for Chris's perspective is the right move, even midway through a conversation that started badly. Because it opened with criticism, Chris shares only part of the story. Listening late still helps; it just takes more effort to rebuild the trust that the opening cost.",
+        "skillsUsed": [
+          "open questions",
+          "listening under tension",
+          "recovery"
+        ],
+        "consequences": "Chris shares two real issues - personal strain and a sprint-sizing problem - but remains guarded"
+      },
+      "choices": [
+        {
+          "id": "own_the_opening",
+          "text": "Acknowledge you started too hard, and ask what would help with both issues",
+          "strategy": "collaborating",
+          "nextNode": "trust_rebuilding"
+        },
+        {
+          "id": "review_estimates",
+          "text": "Take the estimate point seriously and agree on fewer, firm commitments while you review sprint sizing",
+          "strategy": "compromising",
+          "nextNode": "balanced_approach"
+        },
+        {
+          "id": "back_to_deadlines",
+          "text": "Steer back to the deadlines and make clear what happens if they keep slipping",
+          "strategy": "competing",
+          "nextNode": "disciplinary_threat"
+        }
+      ]
+    },
+    "trust_rebuilding": {
+      "type": "outcome",
+      "content": {
+        "title": "Slowing Down",
+        "text": "You put your notes aside. 'I came in too hard, and I'm sorry. I'd like to understand what's going on before we talk about deadlines.' Chris takes a breath and explains that a family situation has been taking a lot of their time and energy, and that they've been trying to keep it from affecting work. Together you talk through which parts of the job have been hardest to keep up with.",
+        "speaker": "narrator",
+        "emotion": "softening"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "high",
+        "explanation": "Owning your part in a rough start makes it safe for the other person to be honest. Repairing trust takes more time than starting well would have, but it now makes a real plan possible.",
+        "skillsUsed": [
+          "apology",
+          "trust repair",
+          "joint problem diagnosis"
+        ],
+        "consequences": "Chris opens up and is ready to work on a plan with you"
+      },
+      "choices": [
+        {
+          "id": "plan_with_milestones",
+          "text": "Build a support plan together with clear milestones",
+          "strategy": "collaborating",
+          "nextNode": "collaborative_support_plan"
+        },
+        {
+          "id": "offer_lighter_load",
+          "text": "Offer a temporarily lighter workload while things settle",
+          "strategy": "accommodating",
+          "nextNode": "temporary_support"
+        }
+      ]
+    },
+    "balanced_approach": {
+      "type": "outcome",
+      "content": {
+        "title": "Adjusted, Not Lowered",
+        "text": "You and Chris agree on a middle path: for the next two sprints, Chris commits to fewer tickets, each with a firm date, and you'll check in briefly once a week. 'The bar is the same,' you explain. 'We're just narrowing what you're responsible for while things are hard.' Chris agrees, though they ask: 'What do we tell the team about why I have less on my plate?'",
+        "speaker": "narrator",
+        "emotion": "measured"
+      },
+      "feedback": {
+        "strategy": "compromising",
+        "effectiveness": "high",
+        "explanation": "Reducing scope while keeping quality and deadlines firm gives Chris breathing room without dropping accountability. Both sides give a little. The open question is the team: an adjustment no one explains can look like favoritism.",
+        "skillsUsed": [
+          "scope adjustment",
+          "accountability",
+          "expectation setting"
+        ],
+        "consequences": "Chris has a realistic workload and clear commitments; the team still needs to be considered"
+      },
+      "choices": [
+        {
+          "id": "ask_how_to_tell_team",
+          "text": "Ask Chris how they would like the team told about the adjusted workload",
+          "strategy": "collaborating",
+          "nextNode": "team_aware_support"
+        },
+        {
+          "id": "keep_it_between_you",
+          "text": "Keep the adjustment between you and Chris",
+          "strategy": "avoiding",
+          "nextNode": "private_accommodation"
+        }
+      ]
+    },
+    "guided_direct_approach": {
+      "type": "outcome",
+      "content": {
+        "title": "Leslie's Advice, Your Conversation",
+        "text": "Leslie suggests you open with care, describe specific impacts rather than judgments, and mention the Employee Assistance Program. You meet Chris privately and follow that approach. Chris is surprised but responds: 'I didn't realize it was that noticeable. There's a family situation that's been taking a lot out of me.' Chris seems relieved the conversation is with you and not with Leslie.",
+        "speaker": "narrator",
+        "emotion": "careful"
+      },
+      "feedback": {
+        "strategy": "accommodating",
+        "effectiveness": "high",
+        "explanation": "Following your manager's guidance while keeping the conversation in your own hands gives you experienced advice without passing the relationship upward. The trade-off is that you're using someone else's approach, which can feel less natural, and it's worth adapting it to what you know about Chris.",
+        "skillsUsed": [
+          "seeking advice",
+          "direct conversation",
+          "specific feedback"
+        ],
+        "consequences": "Chris opens up to you directly, with Leslie's resources available in the background"
+      },
+      "choices": [
+        {
+          "id": "plan_with_resources",
+          "text": "Work out a support plan with Chris, using the resources Leslie mentioned",
+          "strategy": "collaborating",
+          "nextNode": "collaborative_support_plan"
+        },
+        {
+          "id": "offer_breathing_room",
+          "text": "Offer Chris a temporarily reduced workload",
+          "strategy": "accommodating",
+          "nextNode": "temporary_support"
+        },
+        {
+          "id": "empathy_with_standards",
+          "text": "Express empathy but make clear that the deadlines still need to be met",
+          "strategy": "compromising",
+          "nextNode": "empathetic_boundaries"
+        }
+      ]
+    },
+    "public_accountability": {
+      "type": "resolution",
+      "content": {
+        "title": "Accountability in Public",
+        "text": "You keep the discussion going, and teammates list the tasks that slipped. Chris answers in short sentences, then stops talking altogether. After the meeting, Chris stays heads-down and stops speaking up in standups. Over the next weeks, other team members become less willing to mention when they're falling behind, since they've seen how it gets handled.",
+        "speaker": "narrator",
+        "emotion": "cold"
+      },
+      "feedback": {
+        "strategy": "competing",
+        "effectiveness": "very_low",
+        "explanation": "Pressing for accountability in front of the group puts the team's frustration ahead of Chris's dignity. Public pressure rarely reveals why someone is struggling, and it teaches everyone watching to hide problems instead of raising them early.",
+        "skillsUsed": [
+          "direct confrontation"
+        ],
+        "consequences": "Chris withdraws, the team learns to hide struggles, and the real causes stay hidden"
+      },
+      "endings": [
+        {
+          "type": "failure",
+          "title": "Silence Spreads",
+          "description": "The public approach doesn't fix Chris's performance and makes the whole team less likely to raise problems early.",
+          "reflection": "What does a team learn from watching how one person's struggles are handled in public?"
+        }
+      ]
+    },
+    "team_support_focus": {
+      "type": "outcome",
+      "content": {
+        "title": "From Blame to Team Habits",
+        "text": "You change direction: 'Everyone hits a rough patch sometimes. How can we flag when we're overloaded, before work starts slipping?' The team suggests raising capacity concerns at standup, pairing on risky tickets, and a quick workload check before each sprint. Chris stays quiet but looks less tense. The meeting ends calmer, though nothing has been said to Chris directly.",
+        "speaker": "narrator",
+        "emotion": "calmer"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "medium",
+        "explanation": "Turning the conversation toward shared habits lowers the heat and builds norms that help everyone. But it is a general fix for a specific situation: Chris still needs a private conversation, and the teammates who raised concerns may feel their point was sidestepped.",
+        "skillsUsed": [
+          "reframing",
+          "team facilitation",
+          "process improvement"
+        ],
+        "consequences": "The team has better habits for flagging overload, but Chris's situation hasn't been addressed"
+      },
+      "choices": [
+        {
+          "id": "private_after_meeting",
+          "text": "Follow up with Chris privately after the meeting",
+          "strategy": "active_listening",
+          "nextNode": "trust_focused_rebuilding"
+        },
+        {
+          "id": "let_norms_work",
+          "text": "Let the new team habits do the work and avoid singling Chris out",
+          "strategy": "avoiding",
+          "nextNode": "norms_only"
+        }
+      ]
+    },
+    "norms_only": {
+      "type": "resolution",
+      "content": {
+        "title": "Good Habits, Missing Conversation",
+        "text": "The team uses its new habits, and capacity check-ins become routine. Chris never brings up their own workload, though, and you never ask. Deadlines keep slipping, more slowly than before. A month later, a teammate asks you directly why nothing has changed with Chris.",
+        "speaker": "narrator",
+        "emotion": "uneasy"
+      },
+      "feedback": {
+        "strategy": "avoiding",
+        "effectiveness": "low",
+        "explanation": "Team norms are valuable, and avoiding a hard conversation can feel like protecting someone. But habits can't replace a direct conversation when one person is clearly struggling. Avoiding it leaves Chris without support and leaves the team doubting that problems get handled.",
+        "skillsUsed": [
+          "process improvement"
+        ],
+        "consequences": "Team habits improve, but Chris's situation goes unaddressed and the team's trust in your leadership drops"
+      },
+      "endings": [
+        {
+          "type": "mixed",
+          "title": "Systems Without Support",
+          "description": "The team's processes improve, but the person who most needed a conversation never got one.",
+          "reflection": "When is a team-wide fix a way of avoiding a conversation with one person?"
+        }
+      ]
+    },
+    "trust_focused_rebuilding": {
+      "type": "outcome",
+      "content": {
+        "title": "Starting Over, Privately",
+        "text": "Over coffee, you start by owning the meeting: 'I put you on the spot in front of everyone, and that wasn't fair.' Chris accepts the apology and, after a while, explains that things at home have been very demanding and they haven't known how to bring it up. Chris asks that the team not be told the details.",
+        "speaker": "narrator",
+        "emotion": "quiet"
+      },
+      "feedback": {
+        "strategy": "collaborating",
+        "effectiveness": "high",
+        "explanation": "Repairing trust before talking about performance makes an honest conversation possible. It takes time, and you are starting from behind after the meeting, but Chris is now willing to work on the problem with you.",
+        "skillsUsed": [
+          "apology",
+          "trust repair",
+          "respecting privacy"
+        ],
+        "consequences": "Chris trusts you enough to talk, and has asked for privacy about the details"
+      },
+      "choices": [
+        {
+          "id": "support_plan_after_repair",
+          "text": "Build a support plan together with clear milestones",
+          "strategy": "collaborating",
+          "nextNode": "collaborative_support_plan"
+        },
+        {
+          "id": "narrow_commitments",
+          "text": "Agree on a smaller set of firm commitments for the next two sprints",
+          "strategy": "compromising",
+          "nextNode": "balanced_approach"
+        }
+      ]
+    },
+    "team_relationship_repair": {
+      "type": "outcome",
+      "content": {
+        "title": "Easing the Team's Frustration",
+        "text": "You talk with the two teammates who raised concerns. You acknowledge the extra work they've been carrying and ask them to hold off on judging Chris, without sharing anything private. They appreciate being heard, but one asks: 'Okay, but what's the plan? We can't keep absorbing this indefinitely.'",
+        "speaker": "narrator",
+        "emotion": "uneasy"
+      },
+      "feedback": {
+        "strategy": "accommodating",
+        "effectiveness": "medium",
+        "explanation": "Smoothing the team's feelings helps keep Chris from being isolated, and recognizing the extra load matters. But without a plan, you are asking teammates to keep absorbing work on trust. Accommodation buys time; it doesn't solve the problem.",
+        "skillsUsed": [
+          "acknowledgment",
+          "discretion",
+          "team care"
+        ],
+        "consequences": "The team feels heard but wants to see a concrete plan"
+      },
+      "choices": [
+        {
+          "id": "return_with_plan",
+          "text": "Talk with Chris privately, then come back to the team with a concrete plan",
+          "strategy": "collaborating",
+          "nextNode": "trust_focused_rebuilding"
+        },
+        {
+          "id": "quietly_rebalance",
+          "text": "Quietly lighten Chris's load and handle team questions as they come up",
+          "strategy": "avoiding",
+          "nextNode": "private_accommodation"
+        }
+      ]
+    },
+    "private_accommodation": {
+      "type": "resolution",
+      "content": {
+        "title": "The Quiet Arrangement",
+        "text": "You keep Chris's adjusted workload between the two of you. For a few weeks it works: Chris's output steadies and their privacy is protected. But the team notices Chris getting fewer tickets with no explanation. Talk of favoritism starts, and one teammate raises it with Leslie. Chris feels protected but increasingly isolated from the team.",
+        "speaker": "narrator",
+        "emotion": "uneasy"
+      },
+      "feedback": {
+        "strategy": "avoiding",
+        "effectiveness": "low",
+        "explanation": "Protecting someone's privacy is a real value, and Chris did get relief. But avoiding any explanation leaves the team to invent its own, which often turns into resentment. Chris's details can stay private while the arrangement itself is still acknowledged.",
+        "skillsUsed": [
+          "discretion",
+          "workload adjustment"
+        ],
+        "consequences": "Chris gets relief, but the team grows resentful and Chris becomes isolated"
+      },
+      "endings": [
+        {
+          "type": "mixed",
+          "title": "Protected but Isolated",
+          "description": "The private arrangement helps Chris in the short term, but the unexplained change damages trust on the team.",
+          "reflection": "How can you protect someone's privacy without keeping the team in the dark about decisions that affect them?"
+        }
+      ]
     }
   },
   "learningResources": {

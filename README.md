@@ -24,12 +24,12 @@ problems, and knowing when to move a conversation off email.
 | Scenario | Level | Time | The situation | Status |
 |---|---|---|---|---|
 | The Email Misunderstanding | Beginner | 5-8 min | A terse email, a defensive reply that copies the manager, and a team that feels the tension | Playable |
-| The Resource Competition | Intermediate | 8-12 min | Two urgent projects need the same designer by Friday | Being written |
-| The Performance Gap | Advanced | 10-15 min | A team member's work is slipping, and the team is noticing | Being written |
+| The Resource Competition | Intermediate | 8-12 min | Two urgent projects need the same designer by Friday | Playable |
+| The Performance Gap | Advanced | 10-15 min | A team member's work is slipping, and the team is noticing | Playable |
 
-The Email Misunderstanding branches through 20 choices to several different
-endings. The other two scenarios have some branches still to write, so the
-menu lists them as "Coming soon" until every path is finished.
+The Email Misunderstanding has 20 choices and 14 endings. The Resource
+Competition has 41 choices and 14 endings, and The Performance Gap has 47
+choices and 11 endings. Every path in each scenario leads to an ending.
 
 ## How it works
 

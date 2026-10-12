@@ -130,7 +130,7 @@
       "type": "outcome",
       "content": {
         "title": "Weighing Business Impact",
-        "text": "You facilitate a discussion about business impact. Maria presents data: 'The campaign targets our biggest growth market - delaying could cost $200K in revenue.' David shares his perspective: 'This feature addresses our #1 customer complaint and affects user retention.' Both make compelling cases. Sam asks: 'What if we could deliver a simplified version of each by Friday, then enhance both next week?'",
+        "text": "You facilitate a discussion about business impact. Maria presents her numbers: 'The campaign targets our biggest growth market, and it's projected to bring in about $200K in revenue. A delay puts that at risk.' David shares his perspective: 'This feature addresses our #1 customer complaint and affects user retention.' Both make compelling cases. Sam asks: 'What if we could deliver a simplified version of each by Friday, then enhance both next week?'",
         "speaker": "narrator",
         "emotion": "analytical"
       },
@@ -190,7 +190,7 @@
       "type": "outcome",
       "content": {
         "title": "The 50/50 Split Dilemma",
-        "text": "You suggest splitting Sam's time equally between projects. Maria objects: 'Split focus means both projects will be mediocre. The campaign needs Sam's full attention for 3 days.' David agrees: 'Design work requires deep focus - context switching will hurt quality.' Sam nods: 'I work best when I can concentrate on one thing at a time.' The compromise isn't working.",
+        "text": "You suggest splitting Sam's time equally between projects. Maria objects: 'Split focus means both projects will be mediocre. The campaign needs Sam's full attention for at least two days.' David agrees: 'Design work requires deep focus - context switching will hurt quality.' Sam nods: 'I work best when I can concentrate on one thing at a time.' The compromise isn't working.",
         "speaker": "narrator",
         "emotion": "frustrated"
       },
@@ -226,7 +226,7 @@
       "type": "outcome",
       "content": {
         "title": "Understanding Creative Work",
-        "text": "Sam explains: 'Design work needs uninterrupted blocks of time. If I could focus on the marketing campaign Monday-Wednesday, then switch to product mockups Thursday-Friday, I could deliver quality work for both. But I'd need both teams to not interrupt me during their off-days.' This sequential approach addresses the focus issue while serving both projects.",
+        "text": "Sam explains: 'Design work needs uninterrupted blocks of time. If I could focus on the marketing campaign today and tomorrow morning, then switch to the product mockups from Thursday afternoon through Friday, I could deliver quality work for both. But I'd need each team to leave me alone during the other team's block.' This sequential approach addresses the focus issue while serving both projects.",
         "speaker": "narrator",
         "emotion": "insightful"
       },
@@ -292,7 +292,7 @@
       "type": "resolution",
       "content": {
         "title": "Focused Excellence",
-        "text": "Both teams agree to Sam's sequential approach. Maria's team gets Sam's full attention Monday-Wednesday for campaign visuals, with no interruptions. David's team gets Thursday-Friday for product mockups. Both teams commit to providing all requirements upfront and avoiding mid-stream changes. Sam delivers excellent work for both projects, and the teams learn the value of respecting creative workflow.",
+        "text": "Both teams agree to Sam's sequential approach. Maria's team gets Sam's full attention from Wednesday through Thursday morning for campaign visuals, with no interruptions. David's team gets Thursday afternoon and Friday for product mockups. Both teams commit to providing all requirements upfront and avoiding mid-stream changes. Sam delivers excellent work for both projects, and the teams learn the value of respecting creative workflow.",
         "speaker": "narrator",
         "emotion": "accomplished"
       },
@@ -382,7 +382,7 @@
       "type": "resolution",
       "content": {
         "title": "Strategic Compromise",
-        "text": "Maria's team develops the campaign using high-quality stock visuals that Sam quickly customizes with brand elements - taking just one day instead of three. This frees Sam to focus on David's product mockups. The campaign launches successfully, and Sam creates custom campaign visuals the following week for ongoing marketing. Both projects succeed without compromising quality.",
+        "text": "Maria's team develops the campaign using high-quality stock visuals that Sam quickly customizes with brand elements - taking about half a day instead of the two days custom visuals would need. This frees Sam to focus on David's product mockups. The campaign launches successfully, and Sam creates custom campaign visuals the following week for ongoing marketing. Both projects succeed without compromising quality.",
         "speaker": "narrator",
         "emotion": "strategic"
       },
@@ -632,7 +632,7 @@
       "type": "resolution",
       "content": {
         "title": "Feature First",
-        "text": "You argue that the feature should come first because it addresses customer complaints. Sam spends the week on David's mockups, and the developers get exactly what they need. Maria's team assembles the campaign with quick visuals that Sam reviews for an hour on Thursday night. The campaign launches, but Maria is frustrated: 'You were supposed to be coordinating, not picking a side.'",
+        "text": "You argue that the feature should come first because it addresses customer complaints. Sam spends the rest of the week on David's mockups, and the developers get exactly what they need. Maria's team assembles the campaign with quick visuals that Sam reviews for an hour on Thursday night. The campaign launches, but Maria is frustrated: 'You were supposed to be coordinating, not picking a side.'",
         "speaker": "narrator",
         "emotion": "strained"
       },
@@ -699,7 +699,7 @@
       "type": "resolution",
       "content": {
         "title": "Protected Focus Time",
-        "text": "You help everyone agree on ground rules: each team gets one short check-in with Sam per day, other questions go to you to batch, and no new requests during the other team's block. Neither Maria nor David gets as much access to Sam as they wanted. Midweek, someone on Maria's team tries to slip in a late change; you hold the line and log it for next week. Sam delivers both projects, and both managers grudgingly admit the rules helped.",
+        "text": "You help everyone agree on ground rules: each team gets one short check-in with Sam per day, other questions go to you to batch, and no new requests during the other team's block. Neither Maria nor David gets as much access to Sam as they wanted. On Thursday, someone on Maria's team tries to slip in a late change; you hold the line and log it for next week. Sam delivers both projects, and both managers grudgingly admit the rules helped.",
         "speaker": "narrator",
         "emotion": "steady"
       },
@@ -961,7 +961,6 @@
     ],
     "furtherReading": [
       "Getting to Yes by Roger Fisher and William Ury",
-      "The Collaborative Way to Divorce by Stuart Webb",
       "Project Management for the Unofficial Project Manager by Kory Kogon"
     ],
     "practiceQuestions": [

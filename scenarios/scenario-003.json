@@ -88,7 +88,7 @@
       "type": "outcome",
       "content": {
         "title": "Opening the Door to Understanding",
-        "text": "You invite Chris for coffee away from the office. 'I've noticed you seem stressed lately, and I wanted to check in - both as your team lead and as someone who cares about you.' Chris hesitates, then opens up: 'My partner and I are going through a divorce, and my parent was just diagnosed with dementia. I'm barely keeping my head above water, but I didn't want to burden the team with personal stuff.'",
+        "text": "You invite Chris for coffee away from the office. 'I've noticed you seem stressed lately, and I wanted to check in - both as your team lead and as someone who cares about you.' Chris hesitates, then opens up: 'There's a family situation that's been taking a lot out of me, and some personal things on top of it. I'm barely keeping my head above water, but I didn't want to burden the team with personal stuff.'",
         "speaker": "narrator",
         "emotion": "vulnerable"
       },
@@ -130,7 +130,7 @@
       "type": "outcome",
       "content": {
         "title": "Building a Bridge Forward",
-        "text": "You and Chris work together on a plan: temporarily reduce Chris's workload by 20%, connect Chris with the Employee Assistance Program for counseling support, establish weekly check-ins to monitor progress and provide guidance, and set clear milestones for returning to full performance within 8 weeks. Chris is grateful: 'I was afraid you'd think I was making excuses. Having a plan makes this feel manageable.'",
+        "text": "You and Chris work together on a plan: temporarily reduce Chris's workload by 20%, connect Chris with the Employee Assistance Program for confidential support, establish weekly check-ins to monitor progress and provide guidance, and set clear milestones for returning to full performance within 8 weeks. Chris is grateful: 'I was afraid you'd think I was making excuses. Having a plan makes this feel manageable.'",
         "speaker": "narrator",
         "emotion": "hopeful"
       },

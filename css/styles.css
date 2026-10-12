@@ -476,4 +476,7 @@ button:focus-visible,
     animation: none;
     border: 4px solid var(--primary-blue);
   }
+
+  /* Portrait breathing and blinking, the background drift and the scene
+     slides are switched off at the end of components.css. */
 }

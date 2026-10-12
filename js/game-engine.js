@@ -122,6 +122,7 @@ class GameEngine {
       this.currentScenario = scenarioData;
       this.currentNode = 'start';
       this.choiceHistory = [];
+      this.stepsToEnd = this.computeStepsToEnd(scenarioData);
       
       console.log('Loaded scenario:', scenarioData.metadata.title);
       
@@ -171,6 +172,33 @@ class GameEngine {
       console.error('Error validating scenario:', error);
       return false;
     }
+  }
+
+  /**
+   * For every scene, the most choices still possible before an ending.
+   * Worked out once per scenario, so the progress bar can show how far
+   * along the current path the learner is.
+   * @param {Object} scenario - Scenario data
+   * @returns {Object} Map of node id to number of remaining choices
+   */
+  computeStepsToEnd(scenario) {
+    const steps = {};
+    const visiting = new Set();
+    const walk = (nodeId) => {
+      if (nodeId in steps) return steps[nodeId];
+      const node = scenario.nodes[nodeId];
+      if (!node || visiting.has(nodeId)) return 0; // missing node or a loop
+      visiting.add(nodeId);
+      let longest = 0;
+      for (const choice of node.choices || []) {
+        if (choice.nextNode) longest = Math.max(longest, 1 + walk(choice.nextNode));
+      }
+      visiting.delete(nodeId);
+      steps[nodeId] = longest;
+      return longest;
+    };
+    Object.keys(scenario.nodes).forEach(walk);
+    return steps;
   }
 
   /**
@@ -315,6 +343,18 @@ class GameEngine {
   }
 
   /**
+   * The ending reached, if the current scene is one
+   * @returns {Object|null} { type, title, description, reflection }
+   */
+  getEnding() {
+    const node = this.getCurrentNode();
+    if (!node || node.type !== 'resolution' || !Array.isArray(node.endings)) {
+      return null;
+    }
+    return node.endings[0] || null;
+  }
+
+  /**
    * Can go back?
    * @returns {boolean} True if can go back
    */
@@ -331,16 +371,27 @@ class GameEngine {
       return null;
     }
     
-    // Count total nodes (rough estimate of progress)
-    const totalNodes = Object.keys(this.currentScenario.nodes).length;
-    const currentProgress = this.choiceHistory.length + 1; // +1 for current node
+    // Choices made, out of the most this path could still take. Every step
+    // moves the bar forward, and it reaches 100% at an ending.
+    const made = this.choiceHistory.length;
+    const isComplete = this.isScenarioComplete();
+    if (!this.stepsToEnd) {
+      this.stepsToEnd = this.computeStepsToEnd(this.currentScenario);
+    }
+    const remaining = this.stepsToEnd[this.currentNode] || 0;
+    let progressPercent = 0;
+    if (isComplete) {
+      progressPercent = 100;
+    } else if (made + remaining > 0) {
+      progressPercent = (made / (made + remaining)) * 100;
+    }
     
     return {
       currentNode: this.currentNode,
-      choicesMade: this.choiceHistory.length,
-      progressPercent: Math.min((currentProgress / totalNodes) * 100, 100),
+      choicesMade: made,
+      progressPercent,
       canGoBack: this.canGoBack(),
-      isComplete: this.isScenarioComplete()
+      isComplete
     };
   }
 

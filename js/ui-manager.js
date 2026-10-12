@@ -11,6 +11,10 @@ class UIManager {
     
     // DOM elements
     this.elements = {};
+
+    // Portrait SVG text by URL. Portraits are put into the page as inline
+    // SVG so CSS can animate them (and switch that off for reduced motion).
+    this.svgCache = new Map();
     
     // Initialize after DOM loads
     if (document.readyState === 'loading') {
@@ -178,6 +182,7 @@ class UIManager {
       this.showLoading();
       
       await this.gameEngine.loadScenario(scenarioId);
+      await this.preloadPortraits();
       
       // Ensure loading is hidden before showing scenario
       this.hideLoading();
@@ -227,20 +232,163 @@ class UIManager {
     if (nodeData.feedback) {
       this.renderFeedback(container, nodeData.feedback);
     }
+
+    // At an ending, show how the story turned out and a question to reflect on
+    const ending = this.gameEngine.getEnding();
+    if (ending) {
+      this.renderEnding(container, ending);
+    }
     
     this.elements.scenarioDisplay.appendChild(container);
     
     // Smooth transition
     container.classList.add('scene-transition');
-    setTimeout(() => container.classList.add('active'), 50);
+    requestAnimationFrame(() => requestAnimationFrame(() => container.classList.add('active')));
+
+    // After a choice near the bottom of a long page, bring the top of the
+    // new scene into view, below the sticky header
+    const header = document.querySelector('.app-header');
+    const headerHeight = header ? header.offsetHeight : 0;
+    const top = this.elements.scenarioDisplay.getBoundingClientRect().top;
+    if (top < headerHeight) {
+      window.scrollTo({
+        top: Math.max(0, window.scrollY + top - headerHeight - 8),
+        behavior: this.prefersReducedMotion() ? 'auto' : 'smooth'
+      });
+    }
     
     // Update back button state
     this.updateBackButton();
     
     // Announce to screen readers
-    this.announceToScreenReader(
-      `${nodeData.content.title || 'New scene'}. ${nodeData.choices ? nodeData.choices.length + ' choices available.' : ''}`
-    );
+    const announcement = ending
+      ? `${nodeData.content.title || 'Ending'}. Ending: ${ending.title}. ${ending.description} Reflection: ${ending.reflection}`
+      : `${nodeData.content.title || 'New scene'}. ${nodeData.choices ? nodeData.choices.length + ' choices available.' : ''}`;
+    this.announceToScreenReader(announcement);
+  }
+
+  /**
+   * Render the ending card: outcome, title, description and reflection
+   */
+  renderEnding(container, ending) {
+    const outcomes = {
+      success: { label: 'Positive outcome', note: 'This approach worked well for the people and the work.' },
+      mixed: { label: 'Mixed outcome', note: 'Some things worked, and some came at a cost.' },
+      failure: { label: 'Difficult outcome', note: 'This approach made things harder. It is worth seeing why.' }
+    };
+    const outcome = outcomes[ending.type] || { label: 'Outcome', note: '' };
+
+    const card = document.createElement('section');
+    card.className = 'ending-card';
+    card.setAttribute('data-outcome', ending.type || 'mixed');
+    card.setAttribute('aria-labelledby', 'ending-title');
+
+    const eyebrow = document.createElement('div');
+    eyebrow.className = 'ending-eyebrow';
+    const kicker = document.createElement('span');
+    kicker.className = 'ending-kicker';
+    kicker.textContent = 'Ending reached';
+    const badge = document.createElement('span');
+    badge.className = 'ending-outcome';
+    badge.textContent = outcome.label;
+    eyebrow.append(kicker, badge);
+
+    const title = document.createElement('h2');
+    title.className = 'ending-title';
+    title.id = 'ending-title';
+    title.textContent = ending.title;
+
+    const description = document.createElement('p');
+    description.className = 'ending-description';
+    description.textContent = ending.description;
+
+    card.append(eyebrow, title, description);
+
+    if (outcome.note) {
+      const note = document.createElement('p');
+      note.className = 'ending-note';
+      note.textContent = outcome.note;
+      card.appendChild(note);
+    }
+
+    if (ending.reflection) {
+      const reflection = document.createElement('div');
+      reflection.className = 'ending-reflection';
+      const label = document.createElement('h3');
+      label.textContent = 'Reflect';
+      const question = document.createElement('p');
+      question.textContent = ending.reflection;
+      reflection.append(label, question);
+      card.appendChild(reflection);
+    }
+
+    const actions = document.createElement('div');
+    actions.className = 'ending-actions';
+    const retry = document.createElement('button');
+    retry.className = 'ending-button primary';
+    retry.textContent = 'Go back and try another choice';
+    retry.addEventListener('click', () => this.handleGoBack());
+    const menu = document.createElement('button');
+    menu.className = 'ending-button';
+    menu.textContent = 'Choose another scenario';
+    menu.addEventListener('click', () => this.showMainMenu());
+    actions.append(retry, menu);
+    card.appendChild(actions);
+
+    container.appendChild(card);
+  }
+
+  /**
+   * Fetch the scenario's portraits ahead of time, so the first scene can
+   * show them inline straight away.
+   */
+  async preloadPortraits() {
+    const characters = Object.values(this.gameEngine.currentScenario?.characters || {});
+    await Promise.all(characters.filter((c) => c.portrait).map((c) => this.loadSvg(c.portrait)));
+  }
+
+  loadSvg(url) {
+    if (!this.svgCache.has(url)) {
+      const request = fetch(url)
+        .then((response) => (response.ok ? response.text() : null))
+        .catch(() => null);
+      this.svgCache.set(url, request);
+      request.then((text) => this.svgCache.set(url, text));
+    }
+    return Promise.resolve(this.svgCache.get(url));
+  }
+
+  /**
+   * A decorative portrait: inline SVG when it has loaded, an image until then.
+   */
+  createPortrait(url, altText = '') {
+    const holder = document.createElement('span');
+    holder.className = 'portrait-svg';
+    const put = (text) => {
+      if (typeof text !== 'string' || !text.includes('<svg')) return false;
+      holder.innerHTML = text;
+      const svg = holder.querySelector('svg');
+      svg.removeAttribute('role');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('focusable', 'false');
+      return true;
+    };
+    if (!put(this.svgCache.get(url))) {
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = altText;
+      holder.appendChild(img);
+      this.loadSvg(url).then(put);
+    }
+    if (altText) {
+      holder.setAttribute('role', 'img');
+      holder.setAttribute('aria-label', altText);
+    }
+    return holder;
+  }
+
+  prefersReducedMotion() {
+    return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   }
 
   /**
@@ -253,6 +401,9 @@ class UIManager {
     // Scene background
     const sceneBackground = document.createElement('div');
     sceneBackground.className = 'scene-background';
+    // The slow drift continues from where it was, rather than restarting
+    // with every scene.
+    sceneBackground.style.setProperty('--drift-delay', `${-((performance.now() / 1000) % 120).toFixed(2)}s`);
     
     if (scenario && scenario.settings && scenario.settings.background) {
       // Load the SVG background
@@ -281,14 +432,12 @@ class UIManager {
       const castStrip = document.createElement('ul');
       castStrip.className = 'cast-strip';
       castStrip.setAttribute('aria-label', 'People in this scenario');
-      cast.forEach((character) => {
+      cast.forEach((character, index) => {
         const item = document.createElement('li');
         item.className = 'cast-member';
-        const img = document.createElement('img');
-        img.src = character.portrait;
-        img.alt = '';
-        img.width = 64;
-        img.height = 64;
+        // Each person breathes and blinks on their own rhythm
+        item.style.setProperty('--i', index);
+        const img = this.createPortrait(character.portrait);
         const text = document.createElement('div');
         const name = document.createElement('span');
         name.className = 'cast-name';
@@ -314,17 +463,7 @@ class UIManager {
       // Load character portrait if available
       const character = scenario?.characters?.[content.speaker];
       if (character && character.portrait) {
-        const img = document.createElement('img');
-        img.src = character.portrait;
-        img.alt = `${character.name} portrait`;
-        img.onload = () => {
-          portrait.classList.remove('placeholder');
-        };
-        img.onerror = () => {
-          console.warn(`Failed to load portrait for ${content.speaker}`);
-          portrait.classList.add('placeholder');
-        };
-        portrait.appendChild(img);
+        portrait.appendChild(this.createPortrait(character.portrait, `${character.name} portrait`));
         
         // Add character name tooltip
         const nameLabel = document.createElement('div');
@@ -407,17 +546,17 @@ class UIManager {
       const choicesList = document.createElement('ol');
       choicesList.className = 'choice-options';
       
-      choices.forEach(choice => {
+      choices.forEach((choice, index) => {
         const listItem = document.createElement('li');
-        const button = this.createChoiceButton(choice);
+        const button = this.createChoiceButton(choice, index);
         listItem.appendChild(button);
         choicesList.appendChild(listItem);
       });
       
       choicesContainer.appendChild(choicesList);
     } else {
-      choices.forEach(choice => {
-        const button = this.createChoiceButton(choice);
+      choices.forEach((choice, index) => {
+        const button = this.createChoiceButton(choice, index);
         choicesContainer.appendChild(button);
       });
     }
@@ -428,9 +567,10 @@ class UIManager {
   /**
    * Create a choice button
    */
-  createChoiceButton(choice) {
+  createChoiceButton(choice, index = 0) {
     const button = document.createElement('button');
     button.className = 'choice-button';
+    button.style.setProperty('--i', index);
     button.textContent = choice.text;
     button.setAttribute('data-choice-id', choice.id);
     button.setAttribute('data-strategy', choice.strategy || '');
@@ -506,8 +646,11 @@ class UIManager {
    * Handle choice selection
    */
   async handleChoice(choiceId) {
+    if (this.choosing) return;
+    this.choosing = true;
     try {
-      const nextNode = this.gameEngine.makeChoice(choiceId);
+      this.gameEngine.makeChoice(choiceId);
+      await this.fadeOutScene();
       this.renderCurrentNode();
       
       // Show save status briefly
@@ -516,7 +659,19 @@ class UIManager {
     } catch (error) {
       console.error('Error making choice:', error);
       this.showError('Error processing your choice. Please try again.');
+    } finally {
+      this.choosing = false;
     }
+  }
+
+  /**
+   * Let the current scene fade out briefly before the next one comes in
+   */
+  fadeOutScene() {
+    const current = this.elements.scenarioDisplay?.querySelector('.scene-transition');
+    if (!current || this.prefersReducedMotion()) return Promise.resolve();
+    current.classList.add('leaving');
+    return new Promise((resolve) => setTimeout(resolve, 160));
   }
 
   /**
@@ -548,10 +703,13 @@ class UIManager {
     if (this.elements.progressFill) {
       this.elements.progressFill.style.width = `${progress.progressPercent}%`;
     }
+    if (this.elements.progressBar) {
+      this.elements.progressBar.setAttribute('aria-valuenow', Math.round(progress.progressPercent));
+    }
     
     if (this.elements.progressText) {
       if (progress.isComplete) {
-        this.elements.progressText.textContent = 'Scenario Complete!';
+        this.elements.progressText.textContent = 'Scenario complete';
       } else {
         this.elements.progressText.textContent = `Choice ${progress.choicesMade + 1}`;
       }
@@ -559,7 +717,9 @@ class UIManager {
     
     // Update choice counter
     if (this.elements.choiceCounter) {
-      this.elements.choiceCounter.textContent = `Choice ${progress.choicesMade + 1}`;
+      this.elements.choiceCounter.textContent = progress.isComplete
+        ? 'Ending reached'
+        : `Choice ${progress.choicesMade + 1}`;
     }
     
     // Update breadcrumbs
